@@ -59,4 +59,5 @@ if __name__ == '__main__':
     parser.add_argument("--output_dir", type=str, default="output/")
     args = parser.parse_args()
     par = Parser()
+    print(args.source_dir, args.output_dir)
     par(args.source_dir, args.output_dir)
