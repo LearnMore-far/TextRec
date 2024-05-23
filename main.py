@@ -16,7 +16,7 @@ def write_helper(data, path):
 class Parser:
 
     def __init__(self):
-        self.pdf = PdfParser(page_num=5)
+        self.pdf = PdfParser()
         self.ppt = PptxParser()
         self.doc = DocxParser()
         self.excel = ExcelParser()
