@@ -3,7 +3,7 @@ class PdfParser:
     def __init__(self, ocr=None, lang="ch", page_num=0):
         if ocr is None:
             from paddleocr import PaddleOCR
-            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, page_num=page_num, show_log=False)
+            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, page_num=page_num, show_log=True)
         else:
             self.ocr = ocr
 
@@ -20,4 +20,4 @@ class PdfParser:
 
 
 if __name__ == '__main__':
-    print(PdfParser(page_num=5)("../data/UnrealText.pdf"))
+    print(PdfParser()("../data/UnrealText.pdf")[-1])
