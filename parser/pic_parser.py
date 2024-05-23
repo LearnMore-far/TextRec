@@ -15,7 +15,7 @@ class PicParser:
             if res == None:
                 continue
             texts = [line[1][0] for line in res]
-            re.append(texts)
+            re.append("\n".join(texts))
         return re
 
 

@@ -16,7 +16,7 @@ def write_helper(data, path):
 class Parser:
 
     def __init__(self):
-        self.pdf = PdfParser()
+        self.pdf = PdfParser(page_num=5)
         self.ppt = PptxParser()
         self.doc = DocxParser()
         self.excel = ExcelParser()
@@ -46,7 +46,7 @@ class Parser:
                 elif name.endswith("xlsx"):
                     re = self.excel(name)
                 else:
-                    re = self.pic(name)[0]
+                    re = self.pic(name)
                 write_helper("\n".join(re), os.path.join(output_dir, basename))
             except:
                 print(f"{name} is error!")
