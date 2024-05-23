@@ -3,7 +3,7 @@ class PicParser:
     def __init__(self, ocr=None, lang="ch"):
         if ocr is None:
             from paddleocr import PaddleOCR
-            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang)
+            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
         else:
             self.ocr = ocr
 
