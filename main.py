@@ -6,6 +6,7 @@ from parser.excel_parser import ExcelParser
 from parser.pic_parser import PicParser
 import os
 from tqdm import tqdm
+import argparse
 
 
 def write_helper(data, path):
@@ -53,5 +54,9 @@ class Parser:
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source_dir", type=str, default="data/")
+    parser.add_argument("--output_dir", type=str, default="output/")
+    args = parser.parse_args()
     par = Parser()
-    par("data/")
+    par(args.source_dir, args.output_dir)

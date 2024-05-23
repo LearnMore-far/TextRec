@@ -25,7 +25,8 @@ paddlepaddle==2.3.2
 ```
 ## 2.使用指南
 
-指定输出目录，否则默认输出到output
+--source_dir 指定输入目录，可为单个文件或者文件夹 
+--output_dir 指定输出目录，否则默认输出到output
 
 ```commandline
 python3 main.py --source_dir your_source_dir --output_dir your_output_dir
