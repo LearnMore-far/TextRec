@@ -25,12 +25,24 @@ class PptxParser:
                     text_frame = shape.text_frame
                     re.append(text_frame.text)
 
-                if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
+                elif shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
                     res = self.ocr.ocr(shape.image.blob)
                     if res[0]:
                         re.append(" ".join([line[1][0] for line in res[0]]))
+
+                elif shape.shape_type == MSO_SHAPE_TYPE.TABLE:
+                    table = shape.table
+                    for row in table.rows:
+                        row_text = []
+                        for cell in row.cells:
+                            row_text.append(cell.text_frame.text)
+                        re.append(" | ".join(row_text))
+                else:
+                    print(f"Ppt Unknown type: {shape}")
         return re
 
 
 if __name__ == '__main__':
-    print(PptxParser()('../data/ex1.pptx'))
+    re = PptxParser()('../data/ex1.pptx')
+    for i in re:
+        print(i)

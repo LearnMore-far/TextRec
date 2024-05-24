@@ -20,4 +20,6 @@ class PdfParser:
 
 
 if __name__ == '__main__':
-    print(PdfParser(page_num=3)("../data/UnrealText.pdf"))
+    re = PdfParser()("../data/LargePdf.pdf")
+    for i in re:
+        print(i)

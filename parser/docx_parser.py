@@ -1,4 +1,3 @@
-# docx
 import docx
 from docx.document import Document
 from docx.text.paragraph import Paragraph
@@ -36,7 +35,20 @@ class DocxParser:
         return None
 
     def __read_table(self, table):
-        return [[cell.text for cell in row.cells] for row in table.rows]
+        return "\n".join(["|".join([cell.text for cell in row.cells]) for row in table.rows])
+
+    def __is_formula(self, paragraph):
+        return bool(paragraph._element.xpath('.//m:oMath'))
+
+    def __extract_formula_text(self, omml_element):
+        return "".join([node.text for node in omml_element.iter() if node.text])
+
+    def __extract_formula(self, paragraph):
+        omml_elements = paragraph._element.xpath('.//m:oMath')
+        for omml in omml_elements:
+            return self.__extract_formula_text(omml)
+        # formula_texts = [self.__extract_formula_text(omml) for omml in omml_elements]
+        return None
 
     def __iter_block_items(self, parent):
         """
@@ -55,14 +67,15 @@ class DocxParser:
         for child in parent_elm.iterchildren():
             if isinstance(child, CT_P):
                 paragraph = Paragraph(child, parent)
-                if self.__is_image(paragraph, parent):
-                    # print('[Image] ')
-                    yield self.__get_ImagePart(paragraph, parent)
-                # print('[Text] ')
                 yield Paragraph(child, parent)
+                if self.__is_image(paragraph, parent):
+                    yield self.__get_ImagePart(paragraph, parent)
+                if self.__is_formula(paragraph):
+                    yield self.__extract_formula(paragraph)
             elif isinstance(child, CT_Tbl):
-                # print('[Table] ')
                 yield Table(child, parent)
+            else:
+                continue
 
     def __call__(self, word_path):
         doc = docx.Document(word_path)
@@ -70,19 +83,20 @@ class DocxParser:
         for block in self.__iter_block_items(doc):
             if isinstance(block, Paragraph):
                 re.append(block.text)
-                # print("text", [block.text])
             elif isinstance(block, Table):
                 re.append(self.__read_table(block))
-                # print("table", self.__read_table(block))
             elif isinstance(block, ImagePart):
                 res = self.ocr.ocr(block.blob, cls=True)
                 if res[0]:
-                    # print("Image", " ".join([line[1][0] for line in res[0]]))
                     re.append("\n".join([line[1][0] for line in res[0]]))
+            elif isinstance(block, str):
+                re.append(block)
             else:
-                print('Unknown Type')
+                print(f"Doc Unknown type: {block}")
         return re
 
 
 if __name__ == '__main__':
-    print(DocxParser()('../data/word.docx'))
+    re = DocxParser()('../data/word.docx')
+    for i in re:
+        print(i)
