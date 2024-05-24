@@ -20,6 +20,6 @@ class PdfParser:
 
 
 if __name__ == '__main__':
-    re = PdfParser()("../data/LargePdf.pdf")
+    re = PdfParser(page_num=4)("../data/LargePdf.pdf")
     for i in re:
         print(i)
