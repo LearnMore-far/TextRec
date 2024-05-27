@@ -18,8 +18,8 @@ class Parser:
 
     def __init__(self):
         self.pdf = PdfParser()
-        self.ppt = PptxParser()
-        self.doc = DocxParser()
+        self.ppt = PptxParser(self.pdf)
+        self.doc = DocxParser(self.pdf)
         self.excel = ExcelParser()
         self.pic = PicParser()
 
