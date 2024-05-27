@@ -21,7 +21,7 @@ class Parser:
         self.ppt = PptxParser(self.pdf)
         self.doc = DocxParser(self.pdf)
         self.excel = ExcelParser()
-        self.pic = PicParser()
+        self.pic = PicParser(self.pdf)
 
     def __call__(self, file_name, output_dir=r"output/"):
         paths = []
