@@ -1,4 +1,3 @@
-import shutil
 from urlibs import sorted_layout_boxes
 from paddleocr import check_img
 import os
@@ -26,14 +25,8 @@ class PdfParser:
             imgs = [img]
 
         pdf_re = []
-        if len(pdf_path) < 30:
-            folder = pdf_path.split('/')[-1][:-4]
-        else:
-            folder = "tmp"
-        save_folder = f"../output/{folder}"
-        if os.path.exists(save_folder):
-            shutil.rmtree(save_folder)
-        os.makedirs(save_folder)
+        save_folder = f"../output/tmp"
+        os.makedirs(save_folder, exist_ok=True)
         for page_idx, img in enumerate(imgs):
             rec_res = self.pdf_ocr(img)
             h, w, _ = img.shape
@@ -49,7 +42,7 @@ class PdfParser:
                     cv2.imwrite(img_path, res['img'])
                     t = [s['text'] for s in res['res']]
                     s = " ".join(t)
-                    s += f" {res['bbox']}_{res['img_idx']}.jpg"
+                    s += f" <link {res['bbox']}_{res['img_idx']}.jpg >"
                     pdf_re.append(s)
                 elif res['type'] == 'table':
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
