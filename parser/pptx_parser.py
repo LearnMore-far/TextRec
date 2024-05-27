@@ -4,30 +4,29 @@ from pptx.enum.shapes import MSO_SHAPE_TYPE
 
 class PptxParser:
 
-    def __init__(self, ocr=None, lang="ch"):
-        if ocr is None:
-            from paddleocr import PaddleOCR
-            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
-        else:
-            self.ocr = ocr
+    def __init__(self, ocr):
+        self.ocr = ocr
 
     def __extract(self, shape):
         if shape.shape_type == 19:
-            # tb = shape.table
-            # rows = []
-            # for i in range(1, len(tb.rows)):
-            #     rows.append("; ".join([tb.cell(
-            #         0, j).text + ": " + tb.cell(i, j).text for j in range(len(tb.columns)) if tb.cell(i, j)]))
-            # return "\n".join(rows)
-
             table = shape.table
-            rows = []
-            for row in table.rows:
-                row_text = []
+            rows = ["<table><thead>"]
+            row_text = ["<tr>"]
+            for cell in table.rows[0].cells:
+                row_text.append(f"<td>{cell.text_frame.text}</td>")
+            row_text.append("</tr>")
+            rows.append("".join(row_text))
+            rows.append("</thead><tbody>")
+            for idx, row in enumerate(table.rows):
+                if idx == 0:
+                    continue
+                row_text = ["<tr>"]
                 for cell in row.cells:
-                    row_text.append(cell.text_frame.text)
-                rows.append(" | ".join(row_text))
-            return "\n".join(rows)
+                    row_text.append(f"<td>{cell.text_frame.text}</td>")
+                row_text.append("</tr>")
+                rows.append("".join(row_text))
+            rows.append("</tbody></table>")
+            return "".join(rows)
 
         if shape.has_text_frame:
             return shape.text_frame.text
@@ -41,9 +40,9 @@ class PptxParser:
             return "\n".join(texts)
 
         if shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
-            res = self.ocr.ocr(shape.image.blob)
-            if res[0]:
-                return " ".join([line[1][0] for line in res[0]])
+            res = self.ocr(shape.image.blob)
+            if len(res):
+                return "\n".join(res)
 
     def __call__(self, pptx_path):
         prs = Presentation(pptx_path)
@@ -51,24 +50,6 @@ class PptxParser:
         for slide in prs.slides:
             texts = []
             for shape in sorted(slide.shapes, key=lambda x: (x.top // 10, x.left)):
-                # if shape.shape_type == MSO_SHAPE_TYPE.TEXT_BOX:
-                #     text_frame = shape.text_frame
-                #     re.append(text_frame.text)
-                #
-                # elif shape.shape_type == MSO_SHAPE_TYPE.PICTURE:
-                #     res = self.ocr.ocr(shape.image.blob)
-                #     if res[0]:
-                #         re.append(" ".join([line[1][0] for line in res[0]]))
-                #
-                # elif shape.shape_type == MSO_SHAPE_TYPE.TABLE:
-                #     table = shape.table
-                #     for row in table.rows:
-                #         row_text = []
-                #         for cell in row.cells:
-                #             row_text.append(cell.text_frame.text)
-                #         re.append(" | ".join(row_text))
-                # else:
-                #     print(f"Ppt Unknown type: {shape}")
                 txt = self.__extract(shape)
                 if txt:
                     texts.append(txt)
@@ -77,6 +58,7 @@ class PptxParser:
 
 
 if __name__ == '__main__':
-    re = PptxParser()('../data/LargePpt.pptx')
-    for i in re:
-        print(i)
+    from pdf_parser import PdfParser
+    re = PptxParser(PdfParser())('../data/LargePpt.pptx')
+    with open('../output/LargePpt.txt', 'w') as w:
+        w.write("\n".join(re))

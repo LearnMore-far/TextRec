@@ -1,25 +1,77 @@
+import shutil
+from urlibs import sorted_layout_boxes
+from paddleocr import check_img
+import os
+import cv2
+
+
 class PdfParser:
 
-    def __init__(self, ocr=None, lang="ch", page_num=0):
+    def __init__(self, ocr=None, lang="ch"):
         if ocr is None:
-            from paddleocr import PaddleOCR
-            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, page_num=page_num, show_log=False)
+            from paddleocr import PPStructure
+            self.pdf_ocr = PPStructure(show_log=True, lang=lang)
         else:
-            self.ocr = ocr
+            self.pdf_ocr = ocr
 
-    def __call__(self, pdf_path):
-        result = self.ocr.ocr(pdf_path, cls=True)
-        re = []
-        for idx in range(len(result)):
-            res = result[idx]
-            if res == None:
-                continue
-            texts = [line[1][0] for line in res]
-            re.append("\n".join(texts))
-        return re
+    def __call__(self, pdf_path, page_num=0, alpha_color=(255, 255, 255)):
+
+        img, flag_gif, flag_pdf = check_img(pdf_path, alpha_color)
+        if isinstance(img, list) and flag_pdf:
+            if page_num > len(img) or page_num == 0:
+                imgs = img
+            else:
+                imgs = img[: page_num]
+        else:
+            imgs = [img]
+
+        pdf_re = []
+        if len(pdf_path) < 30:
+            folder = pdf_path.split('/')[-1][:-4]
+        else:
+            folder = "tmp"
+        save_folder = f"../output/{folder}"
+        if os.path.exists(save_folder):
+            shutil.rmtree(save_folder)
+        os.makedirs(save_folder)
+        for page_idx, img in enumerate(imgs):
+            rec_res = self.pdf_ocr(img)
+            h, w, _ = img.shape
+            rec_res = sorted_layout_boxes(rec_res, w)
+            for res in rec_res:
+                if len(res['res']) == 0:
+                    continue
+                if res['type'] == 'figure':
+                    # Todo upload figure to web, and add it`s text and link to original pos
+                    img_path = os.path.join(
+                        save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+                    )
+                    cv2.imwrite(img_path, res['img'])
+                    t = [s['text'] for s in res['res']]
+                    s = " ".join(t)
+                    s += f" {res['bbox']}_{res['img_idx']}.jpg"
+                    pdf_re.append(s)
+                elif res['type'] == 'table':
+                    table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
+                    pdf_re.append(table)
+                elif res['type'] == 'equation':
+                    # Todo convert equation to markdown type
+                    # eq_path = os.path.join(
+                    #     save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+                    # )
+                    # cv2.imwrite(eq_path, res['img'])
+                    t = [s['text'] for s in res['res']]
+                    s = " ".join(t)
+                    pdf_re.append(s)
+                else:
+                    t = [s['text'] for s in res['res']]
+                    s = " ".join(t)
+                    pdf_re.append(s)
+
+        return pdf_re
 
 
 if __name__ == '__main__':
-    re = PdfParser(page_num=4)("../data/LargePdf.pdf")
-    for i in re:
-        print(i)
+    re = PdfParser()("../data/table1.png", page_num=6)
+    with open('../output/table1.txt', 'w') as w:
+        w.write("\n".join(re))

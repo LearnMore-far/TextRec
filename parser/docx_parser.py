@@ -9,12 +9,8 @@ from docx.oxml.text.paragraph import CT_P
 
 class DocxParser:
 
-    def __init__(self, ocr=None, lang="ch"):
-        if ocr is None:
-            from paddleocr import PaddleOCR
-            self.ocr = PaddleOCR(use_angle_cls=True, lang=lang, show_log=False)
-        else:
-            self.ocr = ocr
+    def __init__(self, ocr):
+        self.ocr = ocr
 
     def __is_image(self, graph: Paragraph, doc: Document):
         images = graph._element.xpath('.//pic:pic')  # 获取所有图片
@@ -35,7 +31,24 @@ class DocxParser:
         return None
 
     def __read_table(self, table):
-        return "\n".join(["|".join([cell.text for cell in row.cells]) for row in table.rows])
+        rows = ["<table><thead>"]
+        row_text = ["<tr>"]
+        for cell in table.rows[0].cells:
+            row_text.append(f"<td>{cell.text}</td>")
+        row_text.append("</tr>")
+        rows.append("".join(row_text))
+        rows.append("</thead><tbody>")
+        for idx, row in enumerate(table.rows):
+            if idx == 0:
+                continue
+            row_text = ["<tr>"]
+            for cell in row.cells:
+                row_text.append(f"<td>{cell.text}</td>")
+            row_text.append("</tr>")
+            rows.append("".join(row_text))
+        rows.append("</tbody></table>")
+        return "".join(rows)
+        # return "\n".join(["|".join([cell.text for cell in row.cells]) for row in table.rows])
 
     def __is_formula(self, paragraph):
         return bool(paragraph._element.xpath('.//m:oMath'))
@@ -47,7 +60,6 @@ class DocxParser:
         omml_elements = paragraph._element.xpath('.//m:oMath')
         for omml in omml_elements:
             return self.__extract_formula_text(omml)
-        # formula_texts = [self.__extract_formula_text(omml) for omml in omml_elements]
         return None
 
     def __iter_block_items(self, parent):
@@ -86,17 +98,18 @@ class DocxParser:
             elif isinstance(block, Table):
                 re.append(self.__read_table(block))
             elif isinstance(block, ImagePart):
-                res = self.ocr.ocr(block.blob, cls=True)
-                if res[0]:
-                    re.append("\n".join([line[1][0] for line in res[0]]))
+                res = self.ocr(block.blob)
+                if len(res):
+                    re.append("\n".join(res))
             elif isinstance(block, str):
                 re.append(block)
             else:
-                print(f"Doc Unknown type: {block}")
+                continue
         return re
 
 
 if __name__ == '__main__':
-    re = DocxParser()('../data/word.docx')
-    for i in re:
-        print(i)
+    from pdf_parser import PdfParser
+    re = DocxParser(PdfParser())('../data/word.docx')
+    with open('../output/word.txt', 'w') as w:
+        w.write("\n".join(re))
