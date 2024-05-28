@@ -117,4 +117,4 @@ class ExcelParser:
 
 if __name__ == "__main__":
     psr = ExcelParser()
-    print(psr("../data/ex.xlsx"))
+    print(psr.html("../data/excel/ex.xlsx"))

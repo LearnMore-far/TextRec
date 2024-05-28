@@ -2,6 +2,7 @@ from .urlibs import sorted_layout_boxes
 from paddleocr import check_img
 import os
 import cv2
+from upload import upload_file
 
 
 class PdfParser:
@@ -35,14 +36,14 @@ class PdfParser:
                 if len(res['res']) == 0:
                     continue
                 if res['type'] == 'figure':
-                    # Todo upload figure to web, and add it`s text and link to original pos
                     img_path = os.path.join(
                         self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
                     )
                     cv2.imwrite(img_path, res['img'])
+                    link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
-                    s += f"\n<link {res['bbox']}_{res['img_idx']}.jpg >"
+                    s += f"\n{link}\n"
                     pdf_re.append(s)
                 elif res['type'] == 'table':
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')

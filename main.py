@@ -39,21 +39,21 @@ class Parser:
                 if name.endswith('pdf'):
                     re = self.pdf(name)
                 elif name.endswith('docx'):
-                    if args.convert2pdf:
+                    if args.doc2pdf:
                         name = file_to_pdf(name, self.basedir)
                         re = self.pdf(name)
                         clear(name)
                     else:
                         re = self.doc(name)
                 elif name.endswith("pptx"):
-                    if args.convert2pdf:
+                    if args.ppt2pdf:
                         name = file_to_pdf(name, self.basedir, file_type=1)
                         re = self.pdf(name)
                         clear(name)
                     else:
                         re = self.ppt(name)
                 elif name.endswith("xlsx"):
-                    re = self.excel(name)
+                    re = self.excel.html(name)
                 else:
                     re = self.pic(name)
                 write_helper("\n".join(re), os.path.join(args.output_dir, basename))
@@ -65,7 +65,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--source_dir", type=str, default="./data/")
     parser.add_argument("--output_dir", type=str, default="./output/")
-    parser.add_argument("--convert2pdf", type=bool, default=True)
+    parser.add_argument("--doc2pdf", type=bool, default=True)
+    parser.add_argument("--ppt2pdf", type=bool, default=False)
     args = parser.parse_args()
     par = Parser()
     print(args.source_dir, args.output_dir)
