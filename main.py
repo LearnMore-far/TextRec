@@ -22,14 +22,15 @@ class Parser:
         self.doc = DocxParser(self.pdf)
         self.excel = ExcelParser()
         self.pic = PicParser(self.pdf)
+        self.basedir = os.path.abspath(__file__).replace("main.py", "")
 
     def __call__(self, args):
         paths = []
         file_name = args.source_dir.replace('\\', '/')
         if os.path.isfile(file_name):
-            paths.append(file_name)
+            paths.append(os.path.abspath(file_name))
         elif os.path.isdir(file_name):
-            paths = traverse_directory(file_name)
+            paths = traverse_directory(os.path.abspath(file_name))
         else:
             raise Exception('Illegal FileName!')
         for name in tqdm(paths[::-1][:5]):
@@ -39,14 +40,14 @@ class Parser:
                     re = self.pdf(name)
                 elif name.endswith('docx'):
                     if args.convert2pdf:
-                        name = file_to_pdf(name)
+                        name = file_to_pdf(name, self.basedir)
                         re = self.pdf(name)
                         clear(name)
                     else:
                         re = self.doc(name)
                 elif name.endswith("pptx"):
                     if args.convert2pdf:
-                        name = file_to_pdf(name, 1)
+                        name = file_to_pdf(name, self.basedir, file_type=1)
                         re = self.pdf(name)
                         clear(name)
                     else:
@@ -62,8 +63,8 @@ class Parser:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source_dir", type=str, default="data/")
-    parser.add_argument("--output_dir", type=str, default="output/")
+    parser.add_argument("--source_dir", type=str, default="./data/")
+    parser.add_argument("--output_dir", type=str, default="./output/")
     parser.add_argument("--convert2pdf", type=bool, default=True)
     args = parser.parse_args()
     par = Parser()

@@ -47,11 +47,11 @@ def sorted_layout_boxes(res, w):
     return new_res
 
 
-def file_to_pdf(doc_path, file_type=0):
+def file_to_pdf(doc_path, basedir, file_type=0):
     """
     Converts a Word document to a PDF file using LibreOffice.
     """
-    output_folder = "../output/tmp"
+    output_folder = os.path.join(basedir, "output/tmp")
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
     if file_type == 0:
@@ -74,6 +74,6 @@ def traverse_directory(directory):
     path = Path(directory)
     for file_path in path.rglob('*'):
         if file_path.is_file():
-            files.append(file_path)
+            files.append(str(file_path))
     return files
 

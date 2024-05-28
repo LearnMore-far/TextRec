@@ -1,4 +1,4 @@
-from urlibs import sorted_layout_boxes
+from .urlibs import sorted_layout_boxes
 from paddleocr import check_img
 import os
 import cv2
@@ -9,7 +9,7 @@ class PdfParser:
     def __init__(self, ocr=None, lang="ch"):
         if ocr is None:
             from paddleocr import PPStructure
-            self.pdf_ocr = PPStructure(show_log=True, lang=lang)
+            self.pdf_ocr = PPStructure(show_log=False, lang=lang)
         else:
             self.pdf_ocr = ocr
 
