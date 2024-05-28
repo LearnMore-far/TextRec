@@ -4,6 +4,9 @@ import os
 import cv2
 from .upload import upload_file
 from tqdm import tqdm
+from PIL import Image
+from pix2tex.cli import LatexOCR
+
 
 class PdfParser:
 
@@ -13,6 +16,7 @@ class PdfParser:
             self.pdf_ocr = PPStructure(show_log=False, lang=lang)
         else:
             self.pdf_ocr = ocr
+        self.formula = LatexOCR()
         self.upload = True
         self.save_folder = os.path.abspath(__file__).replace("parser/pdf_parser.py", "output/tmp")
         os.makedirs(self.save_folder, exist_ok=True)
@@ -51,14 +55,12 @@ class PdfParser:
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
                     pdf_re.append(table)
                 elif res['type'] == 'equation':
-                    # Todo convert equation to markdown type
-                    # eq_path = os.path.join(
-                    #     self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
-                    # )
-                    # cv2.imwrite(eq_path, res['img'])
-                    t = [s['text'] for s in res['res']]
-                    s = "\n".join(t)
-                    pdf_re.append(s)
+                    eq_path = os.path.join(
+                        self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+                    )
+                    cv2.imwrite(eq_path, res['img'])
+                    img = Image.open(eq_path)
+                    pdf_re.append(self.formula(img))
                 else:
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
