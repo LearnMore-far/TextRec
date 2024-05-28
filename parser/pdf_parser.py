@@ -13,7 +13,7 @@ class PdfParser:
             self.pdf_ocr = PPStructure(show_log=False, lang=lang)
         else:
             self.pdf_ocr = ocr
-        self.upload = False
+        self.upload = True
         self.save_folder = os.path.abspath(__file__).replace("parser/pdf_parser.py", "output/tmp")
         os.makedirs(self.save_folder, exist_ok=True)
 
