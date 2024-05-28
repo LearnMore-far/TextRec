@@ -6,6 +6,7 @@ from .upload import upload_file
 from tqdm import tqdm
 from PIL import Image
 from pix2tex.cli import LatexOCR
+from .urlibs import clear
 
 
 class PdfParser:
@@ -65,7 +66,7 @@ class PdfParser:
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
                     pdf_re.append(s)
-
+        clear(self.save_folder)
         return pdf_re
 
 

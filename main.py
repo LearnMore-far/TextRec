@@ -3,7 +3,7 @@ from parser.pptx_parser import PptxParser
 from parser.docx_parser import DocxParser
 from parser.excel_parser import ExcelParser
 from parser.pic_parser import PicParser
-from parser.urlibs import file_to_pdf, clear, traverse_directory
+from parser.urlibs import file_to_pdf, traverse_directory
 import os
 from tqdm import tqdm
 import argparse
@@ -42,14 +42,12 @@ class Parser:
                     if args.doc2pdf:
                         name = file_to_pdf(name, self.basedir)
                         re = self.pdf(name)
-                        clear(name)
                     else:
                         re = self.doc(name)
                 elif name.endswith("pptx"):
                     if args.ppt2pdf:
                         name = file_to_pdf(name, self.basedir, file_type=1)
                         re = self.pdf(name)
-                        clear(name)
                     else:
                         re = self.ppt(name)
                 elif name.endswith("xlsx"):

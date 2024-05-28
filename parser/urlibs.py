@@ -1,4 +1,5 @@
 import os
+import shutil
 from pathlib import Path
 from subprocess import run
 
@@ -66,7 +67,12 @@ def file_to_pdf(doc_path, basedir, file_type=0):
 
 
 def clear(file_path):
-    os.remove(file_path)
+    if os.path.isdir(file_path):
+        files = traverse_directory(file_path)
+    else:
+        files = [file_path]
+    for file in files:
+        os.remove(file)
 
 
 def traverse_directory(directory):
