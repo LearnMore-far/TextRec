@@ -17,12 +17,12 @@ def write_helper(data, path):
 class Parser:
 
     def __init__(self):
+        self.basedir = os.path.abspath(__file__).replace("main.py", "")
         self.pdf = PdfParser()
         self.ppt = PptxParser(self.pdf)
         self.doc = DocxParser(self.pdf)
         self.excel = ExcelParser()
         self.pic = PicParser(self.pdf)
-        self.basedir = os.path.abspath(__file__).replace("main.py", "")
 
     def __call__(self, args):
         paths = []
@@ -33,7 +33,7 @@ class Parser:
             paths = traverse_directory(os.path.abspath(file_name))
         else:
             raise Exception('Illegal FileName!')
-        for name in tqdm(paths[::-1][:5]):
+        for name in tqdm(paths[::-1][3:5]):
             try:
                 basename = os.path.basename(name).split('.')[0] + '.txt'
                 if name.endswith('pdf'):

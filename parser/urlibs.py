@@ -77,3 +77,6 @@ def traverse_directory(directory):
             files.append(str(file_path))
     return files
 
+
+if __name__ == '__main__':
+    file_to_pdf("../data/docx/word3.docx", "../")
