@@ -2,6 +2,7 @@
 from openpyxl import load_workbook
 import sys
 from io import BytesIO
+from tqdm import tqdm
 
 all_codecs = [
     'utf-8', 'gb2312', 'gbk', 'utf_16', 'ascii', 'big5', 'big5hkscs',
@@ -47,7 +48,7 @@ class ExcelParser:
             wb = load_workbook(BytesIO(fnm))
 
         tb_chunks = []
-        for sheetname in wb.sheetnames:
+        for sheetname in tqdm(wb.sheetnames, desc=f"process {fnm}"):
             ws = wb[sheetname]
             rows = list(ws.rows)
             if not rows: continue

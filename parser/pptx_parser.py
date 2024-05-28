@@ -1,5 +1,6 @@
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
+from tqdm import tqdm
 
 
 class PptxParser:
@@ -47,9 +48,9 @@ class PptxParser:
     def __call__(self, pptx_path):
         prs = Presentation(pptx_path)
         re = []
-        for slide in prs.slides:
+        for idx, slide in enumerate(tqdm(prs.slides, desc=f"process {pptx_path}")):
             texts = []
-            for shape in sorted(slide.shapes, key=lambda x: (x.top // 10, x.left)):
+            for shape in tqdm(sorted(slide.shapes, key=lambda x: (x.top // 10, x.left)), desc=f"page {idx}"):
                 txt = self.__extract(shape)
                 if txt:
                     texts.append(txt)

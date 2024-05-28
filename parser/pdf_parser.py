@@ -3,7 +3,7 @@ from paddleocr import check_img
 import os
 import cv2
 from .upload import upload_file
-
+from tqdm import tqdm
 
 class PdfParser:
 
@@ -13,6 +13,7 @@ class PdfParser:
             self.pdf_ocr = PPStructure(show_log=False, lang=lang)
         else:
             self.pdf_ocr = ocr
+        self.upload = False
         self.save_folder = os.path.abspath(__file__).replace("parser/pdf_parser.py", "output/tmp")
         os.makedirs(self.save_folder, exist_ok=True)
 
@@ -28,22 +29,23 @@ class PdfParser:
             imgs = [img]
 
         pdf_re = []
-        for page_idx, img in enumerate(imgs):
+        for page_idx, img in enumerate(tqdm(imgs, desc=f"process {pdf_path}")):
             rec_res = self.pdf_ocr(img)
             h, w, _ = img.shape
             rec_res = sorted_layout_boxes(rec_res, w)
-            for res in rec_res:
+            for res in tqdm(rec_res, desc=f"page {page_idx}"):
                 if len(res['res']) == 0:
                     continue
                 if res['type'] == 'figure':
-                    img_path = os.path.join(
-                        self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
-                    )
-                    cv2.imwrite(img_path, res['img'])
-                    link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
-                    s += f"\n{link}\n"
+                    if self.upload:
+                        img_path = os.path.join(
+                            self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+                        )
+                        cv2.imwrite(img_path, res['img'])
+                        link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
+                        s += f"\n{link}\n"
                     pdf_re.append(s)
                 elif res['type'] == 'table':
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
