@@ -59,6 +59,6 @@ class PptxParser:
 
 if __name__ == '__main__':
     from pdf_parser import PdfParser
-    re = PptxParser(PdfParser())('../data/LargePpt.pptx')
+    re = PptxParser(PdfParser())('../data/pptx/LargePpt.pptx')
     with open('../output/LargePpt.txt', 'w') as w:
         w.write("\n".join(re))

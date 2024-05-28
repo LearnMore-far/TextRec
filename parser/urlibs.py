@@ -1,3 +1,8 @@
+import os
+from pathlib import Path
+from subprocess import run
+
+
 def sorted_layout_boxes(res, w):
     """
     Sort text boxes in order from top to bottom, left to right
@@ -40,3 +45,35 @@ def sorted_layout_boxes(res, w):
     if res_right:
         new_res += res_right
     return new_res
+
+
+def file_to_pdf(doc_path, file_type=0):
+    """
+    Converts a Word document to a PDF file using LibreOffice.
+    """
+    output_folder = "../output/tmp"
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+    if file_type == 0:
+        pdf_path = doc_path.replace(".docx", ".pdf")
+    elif file_type == 1:
+        pdf_path = doc_path.replace(".pptx", ".pdf").replace(".ppt", ".pdf")
+    stem = os.path.basename(pdf_path)
+    pdf_path = os.path.join(output_folder, stem)
+    command = ['soffice', '--headless', '--convert-to', 'pdf', '--outdir', output_folder, doc_path]
+    run(command, check=True)
+    return pdf_path
+
+
+def clear(file_path):
+    os.remove(file_path)
+
+
+def traverse_directory(directory):
+    files = []
+    path = Path(directory)
+    for file_path in path.rglob('*'):
+        if file_path.is_file():
+            files.append(file_path)
+    return files
+

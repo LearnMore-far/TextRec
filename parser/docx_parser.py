@@ -110,6 +110,6 @@ class DocxParser:
 
 if __name__ == '__main__':
     from pdf_parser import PdfParser
-    re = DocxParser(PdfParser())('../data/word.docx')
+    re = DocxParser(PdfParser())('../data/docx/word.docx')
     with open('../output/word.txt', 'w') as w:
         w.write("\n".join(re))

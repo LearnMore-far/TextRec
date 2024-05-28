@@ -9,4 +9,4 @@ class PicParser:
 
 if __name__ == '__main__':
     from pdf_parser import PdfParser
-    print(PicParser(PdfParser())("../data/captcha_demo.png"))
+    print(PicParser(PdfParser())("../data/picture/captcha_demo.png"))

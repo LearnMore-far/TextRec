@@ -65,6 +65,6 @@ class PdfParser:
 
 
 if __name__ == '__main__':
-    re = PdfParser()("../data/table1.png", page_num=6)
+    re = PdfParser()("../data/picture/table1.png", page_num=6)
     with open('../output/table1.txt', 'w') as w:
         w.write("\n".join(re))
