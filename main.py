@@ -33,7 +33,7 @@ class Parser:
             paths = traverse_directory(os.path.abspath(file_name))
         else:
             raise Exception('Illegal FileName!')
-        for name in tqdm(paths[::-1][3:5]):
+        for name in tqdm(paths):
             try:
                 basename = os.path.basename(name).split('.')[0] + '.txt'
                 if name.endswith('pdf'):

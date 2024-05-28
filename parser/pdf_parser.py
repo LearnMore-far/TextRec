@@ -2,7 +2,7 @@ from .urlibs import sorted_layout_boxes
 from paddleocr import check_img
 import os
 import cv2
-from upload import upload_file
+from .upload import upload_file
 
 
 class PdfParser:
