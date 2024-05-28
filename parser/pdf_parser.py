@@ -34,7 +34,7 @@ class PdfParser:
             h, w, _ = img.shape
             rec_res = sorted_layout_boxes(rec_res, w)
             for res in tqdm(rec_res, desc=f"page {page_idx}"):
-                if len(res['res']) == 0:
+                if len(res['res']) == 0 and res['type'] != "figure":
                     continue
                 if res['type'] == 'figure':
                     t = [s['text'] for s in res['res']]
@@ -68,6 +68,6 @@ class PdfParser:
 
 
 if __name__ == '__main__':
-    re = PdfParser()("../data/picture/table1.png", page_num=4)
-    with open('../output/table1.txt', 'w') as w:
+    re = PdfParser()("../data/pdf/word2.pdf", page_num=7)
+    with open('../output/word2.txt', 'w') as w:
         w.write("\n".join(re))
