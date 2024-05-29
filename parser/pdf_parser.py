@@ -38,6 +38,9 @@ class PdfParser:
             rec_res = self.pdf_ocr(img)
             h, w, _ = img.shape
             rec_res = sorted_layout_boxes(rec_res, w)
+            page_info = []
+            header = []
+            footer = []
             for res in tqdm(rec_res, desc=f"page {page_idx}"):
                 if len(res['res']) == 0 and res['type'] != "figure":
                     continue
@@ -50,22 +53,30 @@ class PdfParser:
                         )
                         cv2.imwrite(img_path, res['img'])
                         link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
-                        s += f"\n{link}\n"
-                    pdf_re.append(s)
+                        s += f"\n{link}"
+                    page_info.append(s)
                 elif res['type'] == 'table':
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
-                    pdf_re.append(table)
+                    page_info.append(table)
                 elif res['type'] == 'equation':
                     eq_path = os.path.join(
                         self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
                     )
                     cv2.imwrite(eq_path, res['img'])
                     img = Image.open(eq_path)
-                    pdf_re.append(self.formula(img))
+                    page_info.append(self.formula(img))
                 else:
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
-                    pdf_re.append(s)
+                    if res['type'] == 'header':
+                        header.append(s)
+                    elif res['type'] == 'footer':
+                        footer.append(s)
+                    else:
+                        page_info.append(s)
+            pdf_re.extend(header)
+            pdf_re.extend(page_info)
+            pdf_re.extend(footer)
         clear(self.save_folder)
         return pdf_re
 

@@ -2,6 +2,7 @@ import os
 import shutil
 from pathlib import Path
 from subprocess import run
+from ppstructure.utility import draw_structure_result
 
 
 def sorted_layout_boxes(res, w):
@@ -82,6 +83,15 @@ def traverse_directory(directory):
         if file_path.is_file():
             files.append(str(file_path))
     return files
+
+
+def draw(result, image):
+    from PIL import Image
+
+    font_path = '/Users/zhoutao/code/PaddleOCR/doc/fonts/simfang.ttf'  # PaddleOCR下提供字体包
+    im_show = draw_structure_result(image, result, font_path=font_path)
+    im_show = Image.fromarray(im_show)
+    im_show.save('/Users/zhoutao/code/TextRec/output/tmp/result.jpg')
 
 
 if __name__ == '__main__':

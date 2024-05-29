@@ -3,7 +3,7 @@ from parser.pptx_parser import PptxParser
 from parser.docx_parser import DocxParser
 from parser.excel_parser import ExcelParser
 from parser.pic_parser import PicParser
-from parser.urlibs import file_to_pdf, traverse_directory
+from parser.urlibs import file_to_pdf, traverse_directory, clear
 import os
 from tqdm import tqdm
 import argparse
@@ -56,12 +56,13 @@ class Parser:
                     re = self.pic(name)
                 write_helper("\n".join(re), os.path.join(args.output_dir, basename))
             except:
+                clear(self.pdf.save_folder)
                 print(f"{name} is error!")
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source_dir", type=str, default="./data/")
+    parser.add_argument("--source_dir", type=str, default="./data/pdf/LargePdf.pdf")
     parser.add_argument("--output_dir", type=str, default="./output/")
     parser.add_argument("--doc2pdf", type=bool, default=True)
     parser.add_argument("--ppt2pdf", type=bool, default=False)
