@@ -1,4 +1,5 @@
-from .urlibs import sorted_layout_boxes
+# from .urlibs import sorted_layout_boxes
+from ppstructure.recovery.recovery_to_doc import sorted_layout_boxes
 from paddleocr import check_img
 import os
 import cv2
