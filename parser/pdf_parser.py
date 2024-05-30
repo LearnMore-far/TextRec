@@ -23,6 +23,13 @@ class PdfParser:
         self.save_folder = os.path.abspath(__file__).replace("parser/pdf_parser.py", "output/tmp")
         os.makedirs(self.save_folder, exist_ok=True)
 
+    def __save_image__(self, res):
+        img_path = os.path.join(
+            self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+        )
+        cv2.imwrite(img_path, res['img'])
+        return img_path
+
     def __call__(self, pdf_path, page_num=0, alpha_color=(255, 255, 255)):
 
         img, flag_gif, flag_pdf = check_img(pdf_path, alpha_color)
@@ -49,10 +56,7 @@ class PdfParser:
                     t = [s['text'] for s in res['res']]
                     s = "\n".join(t)
                     if self.upload:
-                        img_path = os.path.join(
-                            self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
-                        )
-                        cv2.imwrite(img_path, res['img'])
+                        img_path = self.__save_image__(res)
                         link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
                         s += f"\n{link}"
                     page_info.append(s)
@@ -60,10 +64,7 @@ class PdfParser:
                     table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
                     page_info.append(table)
                 elif res['type'] == 'equation':
-                    eq_path = os.path.join(
-                        self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
-                    )
-                    cv2.imwrite(eq_path, res['img'])
+                    eq_path = self.__save_image__(res)
                     img = Image.open(eq_path)
                     page_info.append(self.formula(img))
                 else:
