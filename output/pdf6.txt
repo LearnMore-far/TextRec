@@ -1,0 +1,46 @@
+网络首发时间：2023-05-1914:44:54
+网络首发地址：https://kns.cnki.net/kcms/detail/21.1106.TP.20230519.0923.002.html
+小型微型计算机系统
+Journalof Chinese Computer Systems
+利用知识图谱的多跳可解释问答
+叶蕾，张宇迪，杨旭华
+（浙江工业大学计算机科学与技术学院，杭州310023）
+摘要：基于知识图谱的多疏问答需要分析和理解自然语言问题并在知识图谱的实体和关系上经过多次推理获取答案，是自
+然语言处理的重要研究领域，现有的模型一般通过知识图谱与问题嵌入，利用神经网络推断答案；或使用一阶逻辑规则结合
+概率方法预测答案；前者缺乏可解释性，后者在复杂问题中性能欠佳。为解决上述问题，本文提出一种基于知识图谱的多跳
+可解释问答方法（MIQA），它通过在实体间的多次跳跃推理来获取答案，MIQA首先使用BERT预训练模型获取自然语言问题
+表征向量以及问题分词后的词向量矩阵，在每一跳中，结合问题向量提取问题当前时刻的特征向量，根据特征向量的分类结
+果计算下一跳的关系分数和实体分数，多次跳跃后，综合分数最高的实体被作为答案，而获取该答案所对应的路径为推理路
+径。该方法推理准确率高，同时具有明显的可解释性。在MetaQA、WebQuestionsSP、ComplexWebQuestions三个数据集上，
+通过和其他8个知名算法相比较，仿真结果表明MIQA性能优异，达到了当前的SOTA
+关键词：知识图谱：多跳问答：可解释性：特征抽取：注意力机制
+中图分类号：TP182
+文献标识码A
+YE Lei, ZHANG Yu-Di, YANG Xu-Hua
+(College of Computer Science and Technology, Zhejiang University of Technology, Hangzhou 310023, PR China)
+Abstract: Multi-hop question answering based on knowledge graphs needs to analyze and understand natural language questions and
+obtain answers through multiple reasoning on the entities and relationships of knowledge graphs,which is an important research field of
+natural language processing.Existing models generally use knowledge graphs and question embeddings to infer answers using neural
+networks; or use first-order logic rules combined with probabilistic methods to predict answers; the former lacks interpretability,and the
+latter performs poorly in complex problems.In order to solve the above problems,this paper proposes a multi-hop interpretable question
+answering method (MIQA) based on knowledge graph,which obtains answers by reasoning through multiple jumps between
+entities.MIQA first uses the BERT pre-training model to obtain the natural language question representation vector and the word vector
+matrix after the question word segmentation.In each hop,it combines the question vector to extract the feature vector at the current
+moment of the question,and calculates the next hop based on the classification result of the feature vector.The relationship score and
+entity score,after multiple jumps,the entity with the highest comprehensive score is taken as the answer,and the path corresponding to
+the answer is the inference path.The method has high inference accuracy and obvious interpretability.On the three data sets of
+MetaQA, WebQuestionsSP,and Complex WebQuestions,compared with other 6 well-known algorithms,the simulation results show that
+MIQA has excellent performance,reaching the current SOTA
+Key words: knowledge graph; multi-hop question answering; interpretability; feature extraction; attention mechanism
+1引言
+知识图谱是一种用图模型来建模自然界万物之间关联自然语言问题出发，对其进行语义理解与需求解析，进而从
+关系的技术体系，广泛应用于软件开发、数据管理？、问知识图谱中推理得出答案的任务，它的核心是如何让机器理
+答系统和商品推荐等领域。得益于Freebase和解自然语言。KGQA方法大致可分基于嵌入的方法、基于路
+DBpedia等大规模知识图谱的构建，基于知识图谱的问答
+（KGQA）已经成为当前的研究热点。KGQA是指从给定的
+知识图谱是一种用图模型来建模自然界万物之间关联自然语言问题出发，对其进行语义理解与需求解析，进而从
+关系的技术体系，广泛应用于软件开发、数据管理？、问知识图谱中推理得出答案的任务，它的核心是如何让机器理
+答系统和商品推荐等领域。得益于Freebase和解自然语言。KGQA方法大致可分基于嵌入的方法、基于路
+收稿日期：2023-02-28收修改稿日期：2023-04-26基金项目：国家自然科学基金项目（62176236)资助.作者简介：叶曹，女，1979年生，博士，
+副教授，CCF会员，研究方向为数据挖据与知识推理：张宇迪，男，1997年生，硕士研究生，研究方向为机器学习、多跳间答：桶旭华（通讯作者），
+男，1971年生，博士，教授，CCF高级会员，研究方间为机器学习、网络科学、自然语言处理

@@ -7,8 +7,7 @@ from .upload import upload_file
 from tqdm import tqdm
 from PIL import Image
 from pix2tex.cli import LatexOCR
-from .urlibs import clear
-
+from tempfile import TemporaryDirectory
 
 class PdfParser:
 
@@ -19,13 +18,10 @@ class PdfParser:
         else:
             self.pdf_ocr = ocr
         self.formula = LatexOCR()
-        self.upload = True
-        self.save_folder = os.path.abspath(__file__).replace("parser/pdf_parser.py", "output/tmp")
-        os.makedirs(self.save_folder, exist_ok=True)
 
-    def __save_image__(self, res):
+    def __save_image__(self, res, save_folder):
         img_path = os.path.join(
-            self.save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
+            save_folder, "{}_{}.jpg".format(res["bbox"], res['img_idx'])
         )
         cv2.imwrite(img_path, res['img'])
         return img_path
@@ -42,44 +38,58 @@ class PdfParser:
             imgs = [img]
 
         pdf_re = []
-        for page_idx, img in enumerate(tqdm(imgs, desc=f"process {pdf_path}")):
-            rec_res = self.pdf_ocr(img)
-            h, w, _ = img.shape
-            rec_res = sorted_layout_boxes(rec_res, w)
-            page_info = []
-            header = []
-            footer = []
-            for res in tqdm(rec_res, desc=f"page {page_idx}"):
-                if len(res['res']) == 0 and res['type'] != "figure":
-                    continue
-                if res['type'] == 'figure':
-                    t = [s['text'] for s in res['res']]
-                    s = "\n".join(t)
-                    if self.upload:
-                        img_path = self.__save_image__(res)
+        if len(pdf_path) > 100:
+            process_name = "picture"
+        else:
+            process_name = pdf_path
+        with TemporaryDirectory() as tmpdir:
+            for page_idx, img in enumerate(tqdm(imgs, desc=f"process {process_name}")):
+                rec_res = self.pdf_ocr(img)
+                h, w, _ = img.shape
+                rec_res = sorted_layout_boxes(rec_res, w)
+                page_info = []
+                header = []
+                footer = []
+                for res in tqdm(rec_res, desc=f"page {page_idx}"):
+                    if len(res['res']) == 0 and res['type'] != "figure":
+                        continue
+                    if res['type'] == 'figure':
+                        s = "以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: \n"
+                        s += "<图片文本内容>\n"
+                        t = [s['text'] for s in res['res']]
+                        s += "\n".join(t)
+                        s += "\n</图片文本内容>"
+                        img_path = self.__save_image__(res, tmpdir)
                         link = upload_file(img_path, "{}_{}.jpg".format(res["bbox"], res['img_idx']))
-                        s += f"\n{link}"
-                    page_info.append(s)
-                elif res['type'] == 'table':
-                    table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
-                    page_info.append(table)
-                elif res['type'] == 'equation':
-                    eq_path = self.__save_image__(res)
-                    img = Image.open(eq_path)
-                    page_info.append(self.formula(img))
-                else:
-                    t = [s['text'] for s in res['res']]
-                    s = "\n".join(t)
-                    if res['type'] == 'header':
-                        header.append(s)
-                    elif res['type'] == 'footer':
-                        footer.append(s)
-                    else:
+                        s += f"\n<图片链接>\n {link} \n</图片链接>"
+                        s += "\n<end_figure>"
                         page_info.append(s)
-            pdf_re.extend(header)
-            pdf_re.extend(page_info)
-            pdf_re.extend(footer)
-        clear(self.save_folder)
+                    elif res['type'] == 'table':
+                        s = "以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: \n"
+                        table = res['res']['html'].replace('<html><body>', '').replace('</body></html>', '')
+                        s += table
+                        s += "\n<end_table>"
+                        page_info.append(s)
+                    elif res['type'] == 'equation':
+                        s = "以下是一个公式，包含对应的格式，以<end_formula>结尾: \n"
+                        eq_path = self.__save_image__(res, tmpdir)
+                        img = Image.open(eq_path)
+                        eq = self.formula(img)
+                        s += eq
+                        s += "\n<end_formula>"
+                        page_info.append(s)
+                    else:
+                        t = [s['text'] for s in res['res']]
+                        s = "\n".join(t)
+                        if res['type'] == 'header':
+                            header.append(s)
+                        elif res['type'] == 'footer':
+                            footer.append(s)
+                        else:
+                            page_info.append(s)
+                pdf_re.extend(header)
+                pdf_re.extend(page_info)
+                pdf_re.extend(footer)
         return pdf_re
 
 

@@ -1,0 +1,629 @@
+（2022-2023学年第二学期）
+重庆理工大学研究生课程论文
+课程论文题目：
+基于序列到序列模型的生成式文本摘要研
+究综述
+以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: 
+<table><tbody><tr><td>课程名称</td><td>社交网络分析及应用</td></tr><tr><td>课程类别</td><td>口学位课 非学位课</td></tr><tr><td>任课教师</td><td>刘小洋</td></tr><tr><td>所在学院</td><td>计算机科学与工程学院</td></tr><tr><td>学科专业</td><td>计算机技术</td></tr><tr><td>姓 名</td><td>周涛</td></tr><tr><td>学 号</td><td></td></tr><tr><td></td><td>52220313427</td></tr><tr><td>提交日期</td><td>2023/6/22</td></tr></tbody></table>
+<end_table>
+注意事项：
+注意事项：
+1、以上各项由研究生认真填写；
+2、研究生课程论文应符合一般学术规范，具有一定学术价值，严禁网上下载
+或抄袭；凡检查或抽查不合格者，一律取消该门课程成绩和学分，并按有关规
+定追究相关人员责任；
+3、论文得分由批阅教师填写（见封底），并签字确认；批阅教师应根据作业
+质量客观、公正的在文后签写批阅意见；
+4、原则上要求所有课程论文均须用A4纸双面打印，加装本封面封底，左侧装
+订；
+基于序列到序列模型的生成式
+文本摘要研究综述
+周涛
+(重庆理工大学计算机科学与工程学院，重庆400054)
+摘要近年来，互联网信息呈井喷式爆发，如何从中快速有效的获取信息显得极为重要。自动文本摘要技
+术的出现有效的缓解了该问题。本文梳理了近年来基于序列到序列模型的生成式文本摘要的相关研究，从
+模型的编码、解码、训练等方面的研究工作分别进行了综述，并对这些工作进行了比较，在此基础上总结
+出该领域面临的挑战和未来的研究趋势。
+关键词生成式摘要；序列到序列模型；神经网络
+Sequence Models: A Review
+TaoZhou
+(School of Computer Science and Engineering, Chongqing University of Technology, Chongqing 400054)
+Abstract In recent years, the Internet information has been a blowout explosion, how to obtain
+information quickly and effectively becomes extremely important. The emergence of automatic text
+summary technology effectively alleviates this problem. This paper reviews the recent research on
+sequence-to-sequence model based generative text abstracts, reviews the research work on model
+coding, decoding, training, and so on, and compares these work. On this basis, it summarizes some
+technical routes and development directions in this field.
+Key Words abstractive summarization; Sequence to Sequence model; neural networks
+1引言
+自1958年Luhn"开启了自动摘要研究前自动文本摘要研究的重点，不过从近几
+以来，该邻域已经形成了丰硕的成果。目年的研究结果来看，更多的研究人员将研
+前，自动摘要方法大体上可以分为两类：究重点放在了生成式文本摘要上。
+抽取式（extractive summarization）和生成
+式（abstractive summarization）。抽取式的
+本摘要的相关研究进行了综述，在其中将
+基本做法是从原文中抽取部分重要的句子
+形成摘要，研究重点集中在句子的重要性
+生义两类。前者生成摘要的主要不足是语言
+判断、筛选以及排序等。生成式摘要的基质量相对较差，比如，语句中包含较多的
+本思路是在理解原文的基础之上，凝练其语法错误；后者生成的摘要具备简明、内
+中心思想，以实现语义重构。抽取式是之聚、信息丰富以及低冗余等优点，不足之
+自1958年Luhn"开启了自动摘要研究前自动文本摘要研究的重点，不过从近几
+以来，该邻域已经形成了丰硕的成果。目年的研究结果来看，更多的研究人员将研
+前，自动摘要方法大体上可以分为两类：究重点放在了生成式文本摘要上。
+李金鹏等③等对止于2021年的自动文
+本摘要的相关研究进行了综述，在其中将
+生成式文本摘要分为基于结构以及基于语
+生义两类。前者生成摘要的主要不足是语言
+判断、筛选以及排序等。生成式摘要的基质量相对较差，比如，语句中包含较多的
+本思路是在理解原文的基础之上，凝练其语法错误；后者生成的摘要具备简明、内
+中心思想，以实现语义重构。抽取式是之聚、信息丰富以及低冗余等优点，不足之
+2
+处在于主要使用浅层自然语言处理技术。
+近年来，深度学习技术为自动文本摘要提
+供了新的思路，其中，序列到序列
+（sequence to sequence，Seq2Seq）模型的
+研究与应用最为广泛。该模型由Cho等4和
+Sutskever等提出，基本思想是利用输入序
+列的全局信息推断出与之相对应的输出序
+列，由编码器（encoder）和解码器
+（decoder）构成。Rush等首次将该模型
+应用于生成式摘要，和先前的生成式方法
+相比，该模型是在“理解”文本语义的基础上
+生成摘要，更加接近人工摘要的生成过程。
+随后，学界提出了一系列基于Seq2Seq的
+生成式摘要模型，对编码器、解码器以及
+训练方法等开展了卓有成效的研究工作。
+基于该模型生成的摘要在语言流畅性、连
+贯性等方面让学界看到自动摘要实用化的
+希望。
+本文第2节阐述基础Seq2Seq 模型，第
+3节按照模型的结构分别梳理编码、解码以
+及训练等方面的研究进展，第4节与第5节
+分别对本领域面临的挑战进行分析与总结。
+2 序列到序列模型
+序列到序列（Seq2Seq）模型基本结构
+是编码-解码框架，也叫Encoder-Decoder
+模型。蒙特利尔大学Cho等对其进行了详
+细的描述。其最初用于机器翻译任务。生
+成式自动文本摘要类似于机器翻译任务
+都是序列到序列之间的转换。但机器翻译
+输入序列的长度与输出序列的长度较为接
+近。自动文本摘要是输入文本序列，然后
+生成文本的简短描述。源序列和目标序列
+的长度可以不同。序列到序列模型通过变
+长序列对之间的映射，可以实现不同领域
+之间的转化，使输入和输出的长度可变。
+Seq2Seq框架视为基于深度学习的通用研究
+模型之一。它不仅广泛用于自然语言处理
+领域，而且还广泛用于语音和图像领域。
+序列到序列（Seq2Seq）模型表示形式如图
+2-1所示，Encoder的选择可以是任意的模
+型或数据，Decoder同样也可以是任意的模
+型，对于文本摘要来说，传统的模型需要
+保持输入输出的一致性，该模型的最大特
+点是输入与输出的序列长度可以不一致。
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/14faf81a02586b53f99f9dc19aec34f0.jpg 
+</图片链接>
+<end_figure>
+图2-1序列到序列（Seq2Seq）模型图
+基础的 Seq2Seq 模型包含了编码器、
+解码器和中间向量C,编码器通过训练将输
+入转化为向量C，解码器在解码阶段，通
+过对向量C的转换，将转换后的单词序列
+组成后输出，分别为v
+YY2
+在Cho等的工作中，编码器和解码器
+均采用循环神经网络（recurrentneural
+network，RNN）。编码器将输入的一个可
+编码为一个固
+定的语义向量；解码器从该向量中提取语
+义信息，输出另一个可变长序列
+用词向量表示。模型的具体计算过程如下：
+编码器基于输入的词向量X;，以及上一词
+项的隐层hi-1，计算当前词项隐层h[公式
+(1)]，再通过隐层向量计算语义向量c[公式
+(2)]；解码器在每个时间步t，基于语义向
+量c、上一时间步隐层St-1和生成的上一个
+词项yt-1计算当前隐层S[公式(3)]，再基于
+语义向量C、当前隐层St，和生成的上一个
+词项yt-1，推导当前词项y,的分布[公式
+(4)]。
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+h_{i}{\underline{{=}}}f\left|x_{i},h_{i-1}\right|\!\left(1\right)\!\right.
+<end_formula>
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\begin{array}{r l}{c\!\!\!\!-\!=\!q\backslash\left\lfloor h_{1},h_{2},\ldots,h_{T}\right\rfloor}\\ {s_{_{\!\!\!\!\!\!\!}}}&{{}}\\ {p\!\!\downarrow y_{t}\lor y_{i{\bar{\iota}}{\bar{\iota}}{\bar{\iota}}},X\end{array}
+<end_formula>
+s=f(yt-1,Si-1,c)(3)
+其中，f和g为非线性激活函数；g通常是
+softmax函数，用于产生词项在词汇表V中
+的概率分布，一般用贪婪算法（greedy
+search）取最大概率对应的词项作为输出。
+3
+模型使用有标注的训练集D进行训练，
+D由大量源文本x和对应的标准摘要y构成。3.1编码
+训练的基本目标是优化参数集θ，使输入序
+列x的输出结果最大似然于序列y，即最大
+化logp(yVx,θ），等同于最小化交叉熵损
+失，损失函数为
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\begin{array}{c}{{{\displaystyle L_{M E}|\theta|\Xi-\sum_{|x,y|\Xi D}l o g p{|y}\sqrt{{\displaystyle\vphantom y}\sqrt{{\displaystyle\chi}}\,,\hfill}}}\\ {{-\sum_{|x,y|\Xi D}\sum_{t}{l o g p{|y}{\displaystyle|y}_{t}{\displaystyle\sqrt{{\displaystyle y}_{i t}}}\,,{\displaystyle X}}}\end{array}
+<end_formula>
+模型使用有标注的训练集D进行训练，
+3衍化
+D由大量源文本x和对应的标准摘要y构成。3.1编码
+Rush等在论文中提出了三种编码器
+方案：①词袋编码器，将输入序列中的词
+向量平均后作为语义向量，并不考虑词的
+顺序；②卷积编码器，使用时滞神经网络
+(time-delay neural network，TDNN)对词向
+量交替进行时间卷积（temporalconvolution)
+和最大池化（max pooling）以计算出语义
+向量；③基于注意力机制的编码器；即
+ABS（attention-based summarization）模型。
+ABS模型基于词袋编码器.在计算语义向量
+时，不仅考虑输入序列中的词向量x，还考
+虑解码器已输出的最近R个词的向量{-1，
+yR
+模型用_-1在输入序列和输出序列之间做
+yR
+对齐。
+借鉴人类在阅读时会标注出重点内容
+的做法，Zhou等回提出了选择性编码模型。
+该模型通过设置一个门控网络对编码器生
+成的词项隐层进行权重标注，相当于“选择”
+出相对重要的内容，使解码器可以有针对
+性的读取源文本。模型的具体实现使用门
+控循环单元（gatedrecurrent unit，GRU）计
+算词项的隐层，
+以及文本
+表示hsent，然后将二者输入基于多层感知机
+的门控网络以计算出每个词项的权重向量
+weight,，
+∑ ∑logp(y,Vy,x,0)(5)
+该模型的不足之处是，编码器把源文
+本中的所有信息表示为一个固定的语义向
+量，解码器在生成每一个词项时均参考该
+向量，这为神经网络处理长文本带来了困
+难。Cho等的实验证实随着文本长度的增
+加，模型的表现快速下降。对此
+Bahdanau等在模型中引入了注意力
+（attention）机制.目的是使解码器在生成每
+一个词项时重点关注源文本中的特定部分，
+即解码过程不再依赖原先固定的语义向量C，
+而是利用动态的c[公式(6)~公式(8)]，C是
+时间步t所有词项隐层的加权。
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\begin{array}{c c}{{\epsilon_{t}=\sum_{i=1}^{r}\alpha_{i}h_{i}(6\,}}\\ {{\alpha_{i}=s o f l m a x\bigl\vert e_{i i}\bigl(e_{i k}\bigr)}}&{{=\sum_{k=1}^{r}\exp\bigl\vert e_{i}\bigr)}}\\ {{\alpha_{i}=s o r e\bigl\vert h_{i},s_{i-1}\bigl\vert(8\,}}&{{}}\end{array}
+<end_formula>
+其中，é是注意力得分，用来估计位置附
+近的输入和时间步t的输出之间的匹配程度；
+αt是注意力分布，代表在时间步t每个词项
+的隐层h被解码器关注的程度。每个输出词
+项的分布相应地由公式(4)更新为公式(9)，
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+p\left|\,y_{t}\vee y_{i e t},X\right|=g\left|\,y_{t-1},S_{t},C
+<end_formula>
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+w e i g h t_{i}=o\left[h_{i},h_{s o n}\right]\left(1\right)
+<end_formula>
+weight;=o (h,hsen)(10)
+之后用权重向量更新隐层h;，得到新词项隐
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+h_{i}^{n e w}\!=\!h_{i}\otimes\,w e i g h t_{i}(11)
+<end_formula>
+p(yVyt,X]=g(yt-1,S,c,)(9)
+Bahdanau等的实验结果表明，带有
+注意力机制的模型在机器翻译任务上取得
+了更好的成绩，对于句子长度变化更具鲁
+棒性。注意力机制的加入使得Seq2Seq模
+型更加完善，之后大量相关研究都建立在
+该模型的基础上。
+其中，代表向量点乘运算（element-wise
+multiplication )。
+Zeng 等[10提出的“再读（read-again)"模
+型与Zhou等工作类似，不同点是该模型
+没有直接用权重向量更新当前词项的隐层，
+而是用另一个GRU对源文本进行二次编码，
+4
+然后将权重向量用于更新第二次编码生成
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\begin{array}{c}{{h_{i}^{2}=\left|1-w e i g h t_{i}\right|\otimes h_{i-1}^{2}+\dot{\circ}}}\\ {{\left.v e i g h t_{i}\otimes G R U^{2}(x_{i},h_{i}^{2})}}\end{array}
+<end_formula>
+机器翻译和文本摘要任务中均表现出色，
+引起学界的关注。
+ConvS2S模型的编码器和解码器均是
+多层CNN，编码器对输入序列做多层卷积，
+解码器在每一层都做注意力计算，即多步
+注意力（multi-step attention）。模型首先对
+输入序列中的词项做位置嵌入，将每个词
+向量x,和其绝对位置向量p;相加作为模型
+weight;@ GRU(2 (x,h²2)(12)
+该模型综合考虑了当前词项的权重、当前
+Zeng等[10还将GRU更换为长短时记忆
+网络（long short-term memory，LSTM）做
+了对比实验，考虑到LSTM使用非线性激
+活函数来更新隐层，无需单独计算weight;，
+直接利用第一遍编码获得的词项隐层和文
+本表示即可更新,(2)，
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+h_{i}^{(2)}\!=\!L S T M^{2}\big(\Big[{\cal X}_{i}\,;h_{i}^{\;1}\rangle\,;\,h_{s e n t}^{\;1)}\Big],h_{i.}^{(2)}
+<end_formula>
+嵌入给原本不擅长处理时间序列的CNN带
+来一些"位置感”。对于第I层，用大小为k的
+卷积核vER"“对上一层的输出做一维卷积，
+活函数来更新隐层，无需单独计算weight;，
+得到每一层的输出g'∈R²d，其中d代表词
+g
+linearunit，GLU）对G'做非线性变换；为
+支持深度卷积网络，在每一层的输出中还
+增加了残差连接，最后得到第1+1层的隐层
+h'+1,
+h2=LSTM(2([x,;h;he],h2)(13)
+实验结果表明，GRU和LSTM的表现不分
+伯仲。
+实验证明，对于Seq2Seq模型来说，
+源文本越长处理难度越大，主要原因在于
+神经网络的记忆能力有限，即使有注意力
+机制，也很难联合较远的输入做出判断。
+因此处理长文本的一个思路是将其拆分成
+区块（如句子、段落、语篇等），对区块
+和全文分别进行编码，再用层级注意力
+（hierarchical attention）计算语义向量，从而
+缓解记忆压力，并尝试在语义向量中融入
+文本的结构特征。
+卷积编码即对输入序列进行卷积操作
+以得出文本表示。Rush等间曾使用基于
+TDNN的卷积编码器计算语义向量，鉴于
+TDNN不擅长处理时间序列，而且模型缺
+少注意力机制，实验效果并不理想；来自
+同一团队的 Chopra等[1改进了Rush 等的
+工作，将输入序列中词项的位置信息嵌入
+到词向量中，并加入注意力机制，在一定
+程度上提升了模型的表现。之后的相关工
+作大多采用更擅长处理时间序列的RNN进
+行建模。2017年，Gehring 等[2]提出基于
+CNN的卷积序列到序列（convolutional
+sequence to sequence，ConvS2S）模型，在
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+h_{i}^{l+1}\!=\!G_{1}^{l}\otimes{\mathcal O}\left|G_{,}^{l}\right|\!+\!h_{i}^{l}\left(14
+<end_formula>
+多步注意力的具体实现为：首先将解
+码器第，层的隐层和上一步输出的词项
+S
+，结合得到，之后利用和编码器最
+Yt-1
+后一层的隐层，计算解码器第，层的注意力
+αti
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\alpha_{t i}^{l}\!=\!\frac{\exp\!\left|d_{t}^{l}\!\cdot h_{i}^{L}\right|}{\sum_{k=1}^{\textstyle T}\exp\!\left|d_{t}^{l}\!\cdot\!h_{k}^{L}\right|}
+<end_formula>
+(15）
+最后用1加权,L和。,得到第,层的语义
+αti
+向量1
+5
+下读取语义信息，在拷贝模式下则读取位
+置信息。由于H包含了位置信息，CopyNet
+在网络结构上更加简单，不需要开关和指
+针；但也正是因为H的特殊性，限制了
+CopyNet的通用性。
+在训练阶段，解码器生成的每个词项
+都有标准摘要作参考，并将误差反向传播
+以修正模型参数，因此一般采用贪婪算法
+取词汇分布的概率最大值作为输出词项。
+但在测试阶段，没有标准摘要作参考，这
+时概率最大的词项未必是最好的选择，研
+究表明，用贪婪算法生成的句子可读性较
+差。束搜索算法是解决上述问题的一种手
+段，已被广泛运用于多个摘要模型，具体
+算法是，给定一个束宽（beam width）B，
+在解码的每个时间步都保留词汇分布中概
+率最大的B个词项作为候选词项，从第二
+个时间步开始，会产生BxB个候选分支，
+依然只保留概率最大的前B个分支，依次
+进行下去，直至遇到终止条件。最后得到
+B个候选序列，选择概率最大者作为最终
+结果。束搜索的问题是缺乏多样性，即B
+个候选序列区别不大，因此Cibils等[14提出
+多样性束搜索（diverse beam search），将
+束宽B等分为若干个组，在解码时每个组
+依次进行束搜索，并构造一个差异函数来
+度量当前组的候选序列和先前组生成的序
+列之间的差异，通过惩罚差异小的分支以
+增加组之间生成序列的多样性。
+3.2解码
+解码器读取语义向量并输出目标序列，
+相当于人在理解文本后开始编写摘要。解
+码过程主要存在以下问题：①当某个词不
+存在于词汇表中时，便无法生成；②解码
+器可能会重复关注到源文本的某些部分，
+导致摘要也产生重复；③解码器变量有限，
+无法将高级语法或结构信息模型化。围绕
+上述问题，学界提出多种改进方法。
+Zhou等在Gigaword训练集上统计发
+现，文本摘要中生成的词占42.5%，其余的
+均由拷贝所得，且连续两个词以上的拷贝
+约占1/3。在之前的拷贝机制中，每次拷贝
+都有一个决策过程：拷贝还是生成，如果
+要连续拷贝3个词，机器就要做3次决策。
+此，Zhou等提出序列拷贝网络，其基本
+思想是如果机器决定要拷贝，则直接拷贝
+一个子序列，如3个词，从而减少决策次
+数，同时降低了拷贝机制在连续拷贝过程
+中出错的概率。
+Gu等[13提出的CopyNet 在模型结构上
+有别于先前的拷贝机制，没有使用开关网
+络和指针网络，在解码时基于生成模式和
+拷贝模式的混合概率预测单词。模型构造
+了一个词汇表X，只收录存在于输入序列
+中的词，扩展后的词汇表为
+VUUUNK>，由于X中可能包含不
+存在于V中的词，这部分词将用于拷贝。
+在输出每个目标单词时分别计算生成模式
+和拷贝模式的概率，并相加得到混合概率，
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\begin{array}{c}{{{\cal P}\left|y_{t}\sqrt{s_{t}},y_{i\left.,t-1},C_{t},H\right|=\dot{\left(}}}\\ {{{\cal P}_{e n}\left|y_{t}\sqrt{s_{t}},y_{t-1},C_{t},H\right|+\dot{\mathrm{}{\scriptstyle~}}}}\end{array}
+<end_formula>
+3.3训练
+从公式(5)可以看出，基础模型的训练
+过程属于词级训练，即逐个最大化每个词
+项的条件概率，
+全局信息。对此,Ayana等[15提出最小风险
+训练（minimum risk training，MRT）策略，
+属于序列级训练[6]，即通过最小化生成摘
+要和标准摘要的距离
+来估计模
+y
+△(y,y)
+y
+型参数，距离
+利用ROUGE值计算
+△(y,y)
+而来（如负ROUGE值），损失函数为
+Pcopy(y V St, Yt-1,C, H)(17)
+其中，H表示由编码器生成的词项隐层
+信息又包含位置信息。CopyNet在生成模式
+6
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\sum_{\nu\atop\nu\in D{\pmod{\nu}}\sum_{\nu}\sum_{\b}\sum_{\i}\sum_{\i}\bigcup_{\textstyle\mathcal D}\bigcup_{\textstyle\mathcal D^{\prime}\lor\cdot\forall\Big/}}\underbrace{L}_{\nu}
+<end_formula>
+据集与评价指标的研究工作较少。除此之
+外，关于自动文摘的研究工作缺乏针对性
+的跨越式进步，还需要突破性的创新工作
+提升性能才能更广泛地适应各个场景，所
+以自动文摘任务的质量和性能还面临诸多
+挑战：
+1）数据集。高质量的自动文摘数据集
+较少，甚至中文长文本数据集缺失[19-20]，限
+制了中文文本摘要技术的研究。
+2）评价指标。自动评价方法过于死板，
+人工评价方法较主观，缺乏被学术界广泛
+（ground truth）参考，而测试过程中没有，
+认可并切实可行的评价方法，这减缓了该
+任务的发展21。
+3）语义表达。文档的摘要应有多种表
+达方式[22-23]，但是目前来说同一语义的不同
+表达、重复表达同一语义的问题还需要相
+应的工作来解决。
+自动文摘的研究已经有近60年的历史，
+由于该任务的难度导致初期的效果并不理
+想，随着深度学习的快速发展才使得人们
+看到自动文摘广泛应用的希望。长期看来，
+自动文摘的发展有6个趋势：
+1）数据集。中文、英文和其他语言的
+高质量自动文摘数据集将有可能推动自动
+文摘任务的发展[19.24]，若仅依靠人工参与构
+建数据集将是项耗时耗力的工作，因此如
+果可以通过计算机自动地构建高质量数据
+集将是非常有意义的。
+2）评价指标。目前有工作提出通过计
+算文本之间语义相似度、改进的ROUGE
+等对自动文摘进行评价2"，但尚不能有效地
+扩展，因此更加完善的自动文摘评价指标
+必然是长期研究的重点问题[25]。
+3）方法融合。新技术的探索是永远的
+话题，对传统算法与深度学习的结合，或
+抽取式方法与生成式方法进一步融合将是
+学术界乃至工业界必然的趋势[26-2]。
+4）借助外部知识。机器效仿人类生成
+摘要的过程时需要背景知识的辅助（如纳
+入背景知识库）[28，对于深度学习方法来
+说还可用预训练的模型为自动文摘模型提
+供强有力的外部知识。
+5)弱监督或无监督发展。由于缺乏高
+质量的自动文摘数据集，一种有效可靠的
+∑ ∑ p(y'vx;0)△(y,y)(18)
+其中，Y(x;0)代表训练集中的每个x可能
+生成的摘要的集合。可以看出，最小化
+LMRT可以使模型生成的摘要更加接近标准
+摘要。
+MRT策略依然属于有监督学习，主要
+存在两个不足[17]:一是曝光偏差（exposure
+bias）[1]，由于在训练过程中有真值
+（ground truth）参考，而测试过程中没有，
+因此测试时会产生误差累积；二是最大似
+然于真值并非摘要质量评价的唯一标准。
+针对以上问题，一些学者使用自我评判
+（self-critical）[18]：－种强化学习
+（reinforcementlearning，RL)中的策略梯度
+训练算法来训练模型。模型的训练目标不
+再似然于真值，而是优化用户定义的度量标
+准（如ROUGE）。Paulus 等[17]让模型在每
+次训练选代时分别产生两个输出序列：用
+贪婪算法得到的和经随机采样得到的y"。
+用回报函数r（·返回参数序列和标准摘要y
+相比较得到的ROUGE分数。基于强化学
+习的损失函数为
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\sum_{x,y|\in{\cal D}}\left(r|\hat{y}|-\hat{v}\right)\right)L_{R L}|\theta|\Longrightarrow\hat{v}
+<end_formula>
+∑ (r()-r(y)logp(y*vx;0)(19)
+可以看出，最小化LR相当于最大化ys
+的条件似然，从而增加模型的预期回报。
+然而，Paulus等[17发现强化学习方法虽然可
+以提高模型的ROUGE得分，但生成的摘
+要在可读性上不如最大似然方法，因此将
+公式(19)和公式(5)结合，得到混合目标函
+数，
+其中，y为超参数，用于权衡两个目标
+的比重。
+4挑战及发展趋势
+目前，自动文摘技术已应用在某些特
+定领域。但整体来看，近年大量的工作将
+研究重点放在了抽取或生成的算法上，数
+/
+方法是通过少量的训练数据或无训练数据
+使用高效的算法处理自动文摘任务[29]。
+6）应用场景。研究人员的重心将会慢
+慢从普适性的工作转移到特定细分场景上，
+针对不同的子任务场景提出更加具有针对
+性的算法，如新闻标题、自动对联、评论
+摘要、会议摘要、金融快报等[30]。
+5总结
+Seq2Seq模型源于机器翻译，文本摘要
+和机器翻译虽然都属于序列到序列转换问
+题，但文本摘要聚焦输入序列的关键信息，
+而且输入和输出之间没有明显的对齐关系
+[，从这一角度来说文本摘要任务更加复杂。
+尽管Seq2Seq模型在机器翻译领域已进入
+实用阶段[30-31，但对于文本摘要来说显然还
+有很长的路要走。随着模型的不断衍化，
+Seq2Seq模型生成摘要的方式跟人类思维越
+来越接近，与此同时生成摘要的质量也越
+来越好。尽管该模型依然存在很多不足，
+如难以处理几千词以上的长文本、模型时
+间复杂度高、样本标注开销大等，但其可
+以引领生成式文本摘要未来的研究方向。
+[6]Rush A M, Chopra S, Weston J. A neural attention
+model for abstractive sentence summarization[J].
+arXiv preprint arXiv:1509.00685, 2015.
+[7]Shi T, Keneshloo Y, Ramakrishnan N, et al.
+Neural abstractive text summarization with
+sequence-to-sequence models[J].
+ACM
+Transactions on Data Science, 2021, 2(1): 1-37.
+[8]Nichol A, Dhariwal P, Ramesh A, et al. Glide:
+Towards photorealistic image generation and
+editing with text-guided diffusion models[J].
+arXiv preprint arXiv:2112.10741, 2021.
+[9]Zhou Q, Yang N, Wei F, et al. Selective encoding
+for abstractive sentence summarization[J]. arXiv
+preprint arXiv:1704.07073, 2017.
+[10] Zeng W, Luo W, Fidler S, et al. Efficient
+summarization with read-again and copy
+mechanism[]. arXiv preprint arXiv:1611.03382,
+2016.
+[11] Chopra S, Auli M, Rush A M. Abstractive
+sentence summarization with attentive recurrent
+neural networks[C]/Proceedings of the 2016
+conference of the North American chapter of the
+association for computational linguistics: human
+language technologies. 2016: 93-98.
+[12] Gehring J, Auli M, Grangier D, et al.
+Convolutional sequence to sequence
+learning[C]//Internationalconference on
+machine learning. PMLR, 2017: 1243-1252.
+[13] Gu J, Lu Z, Li H, et al. Incorporating copying
+mechanism in sequence-to-sequence learning[J].
+arXiv preprint arXiv:1603.06393, 2016.
+[14] Cibils A, Musat C, Hossman A, et al. Diverse
+beam search for increased novelty in abstractive
+summarization[J].arXivpreprint arXiv:
+1802.01457 , 2018.
+[15] Shen S, Zhao Y, Liu Z, et al. Neural headline
+generation with sentence-wise optimization[J].
+arXiv preprint arXiv:1604.01904, 2016.
+参考文献
+[1]Luhn H P. The automatic creation of literature
+abstracts[J]. IBM Journal of research and
+development, 1958, 2(2): 159-165.
+[2]Gambhir M, Gupta V. Recent automatic text
+summarization techniques: a survey[]. Artificial
+Intelligence Review, 2017, 47(1): 1-66.
+[3]李金鹏,张闯,陈小军,胡玥,廖鹏程.自动文本摘
+要研究综述[J].计算机研究与发
+展,2021,58(01):1-21.
+[4]Cho K, Van Merrienboer B, Gulcehre C, et al.
+Learning phrase representations using RNN
+encoder-decoder for statistical
+machine
+translation[J]. arXiv preprint arXiv:1406.1078
+2014.
+[5]Sutskever I, Vinyals O, Le Q V. Sequence to
+sequence learning with neural networks[J].
+Advances in neural information processing
+systems, 2014, 27.
+8
+[16] Ranzato M A, Chopra S, Auli M, et al. Sequence
+level training with recurrent neural networks[J]
+arXiv preprint arXiv:1511.06732, 2015.
+[17]Paulus R, Xiong C, Socher R. A deep reinforced
+model for abstractive summarization[J]. arXiv
+preprint arXiv:1705.04304, 2017.
+[18] Rennie S J, Marcheret E, Mroueh Y, et al. Self-
+criticalsequencetrainingfor image
+captioning[C] Proceedings of   the IEEE
+conference on computer vision and pattern
+recognition.2017: 7008-7024.
+[19]Denkowski M, Lavie A. Meteor universal:
+Language specific translation evaluation for any
+target language[C]//Proceedings of the ninth
+workshop on statistical machine translation.
+2014: 376-380.
+[20] Jiang Y, Bansal M. Closed-book training to
+improve summarization encoder memory[J]
+arXiv preprint arXiv:1809.04585, 2018.
+[21]ROUGE L C Y.A package for automatic
+evaluation  of  summaries[C]/Proceedings  of
+Workshop on Text Summarization of ACL,
+Spain. 2004.
+[22] Carletta J, Ashby S, Bourban S, et al. The AMI
+meeting corpus:Apre-announcement[C]
+International workshop on machine learning for
+multimodal interaction.  Springer,  Berlin,
+Heidelberg, 2005: 28-39.
+[23] Fang Y, Zhu H, Muszynska E, et al. A
+proposition-based  abstractive  summariser[C]
+Proceedings of COLING 2016, the 26th
+International Conference on Computational
+Linguistics: Technical Papers. 2016: 567-578.
+[24] Yasunaga M, Kasai J, Zhang R, et al.
+Scisummnet: A large annotated corpus and
+content-impact models for scientific paper
+summarization
+with
+citation
+networks[C]/Proceedingsof theAAAI
+conference on artificial intelligence. 2019,
+33(01): 7386-7393.
+[25]ROUGE L C Y. A package for automatic
+evaluation of summaries[C]//Proceedings of
+Workshop on Text Summarization of ACL,
+Spain. 2004.
+[26]王毅，谢娟，成颖.结合LSTM和CNN混合架
+构的深度神经网络语言模型[J].情报学报，
+2018, 37(2): 194-205.
+[27] Hu B, Chen Q, Zhu F. Lcsts: A large scale chinese
+short text summarization dataset[J]. arXiv
+preprint arXiv:1506.05865, 2015.
+[28] Wang L, Yao J, Tao Y, et al. A reinforced topic-
+aware convolutionalsequence-to-sequence
+model for abstractive text summarization[J]
+arXiv preprint arXiv:1805.03616, 2018.
+[29] Song K, Zhao L, Liu F. Structure-infused copy
+mechanisms for abstractive summarization[J].
+arXiv preprint arXiv:1806.05658, 2018.
+[30]李亚超，熊德意，张民.神经机器翻译综述[].
+计算机学报，2018,41(12):2734-2755.
+[31]吴飞，阳春华，兰旭光，等.人工智能的回顾与
+展望[J].中国科学基金，2018，32(3):243-250.
+以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: 
+<table><tr><td>批阅教师意见</td></tr><tr><td>经综合评价，论文得分为： 批阅教师签名： 批阅日期：</td></tr></table>
+<end_table>

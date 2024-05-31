@@ -4,61 +4,71 @@ import cv2
 from tqdm import tqdm
 import base64
 from paddleocr import img_decode
-from upload import upload_file
-from urlibs import clear
-
+from .upload import upload_file
+from tempfile import TemporaryDirectory
 from unstructured.partition.auto import partition
 
 
 class FastParser:
     def __init__(self):
-        self.save_folder = os.path.abspath(__file__).replace("parser/fast_parser.py", "output/tmp")
-        os.makedirs(self.save_folder, exist_ok=True)
+        pass
 
-    def __save_image__(self, element):
+    def __save_image__(self, element, save_folder):
         img_path = os.path.join(
-            self.save_folder, "{}.jpg".format(element.id)
+            save_folder, "{}.jpg".format(element.id)
         )
         cv2.imwrite(img_path, img_decode(base64.b64decode(element.metadata.image_base64)))
         return img_path
 
     def __table__(self, table):
-        return table.metadata.text_as_html
+        s = "以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: \n"
+        s += table.metadata.text_as_html
+        s += "\n<end_table>"
+        return s
 
-    def __image__(self, image):
-        img_path = self.__save_image__(image)
+    def __image__(self, image, save_folder):
+        img_path = self.__save_image__(image, save_folder)
         link = upload_file(img_path, "{}.jpg".format(image.id))
         return link
 
     def __formula__(self, formula):
-        return formula.text
+        s = "以下是一个公式，包含对应的格式，以<end_formula>结尾: \n"
+        s += formula.text
+        s += "\n<end_formula>"
+        return s
 
     def __call__(self, file_name, strategy="fast"):
-        elements = partition(file_name,
-                             strategy=strategy,
-                             pdf_extract_element_types=["Image", "Formula", "Table"],
-                             pdf_infer_table_structure=True,
-                             pdf_extract_to_payload=True,
-                             skip_infer_table_types=[],
-                             pdf_image_output_dir_path=self.save_folder)
-        if strategy == "fast":
-            return [element.text for element in elements]
-        re = []
-        for element in tqdm(elements, desc=f"process {file_name}"):
-            if element.category == "Image":
-                re.append(element.text)
-                re.append(self.__image__(element))
-            elif element.category == "Table":
-                re.append(self.__table__(element))
-            elif element.category == "Formula":
-                re.append(self.__formula__(element))
-            else:
-                re.append(element.text)
-        clear(self.save_folder)
+        with TemporaryDirectory() as tmpdir:
+            elements = partition(file_name,
+                                 strategy=strategy,
+                                 pdf_extract_element_types=["Image", "Formula", "Table"],
+                                 pdf_infer_table_structure=True,
+                                 pdf_extract_to_payload=True,
+                                 skip_infer_table_types=[],
+                                 pdf_image_output_dir_path=tmpdir)
+            if strategy == "fast":
+                return [element.text for element in elements]
+            re = []
+            for element in tqdm(elements, desc=f"process {file_name}"):
+                if element.category == "Image":
+                    s = "以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: \n"
+                    s += "<图片文本内容>\n"
+                    s += element.text
+                    s += "\n</图片文本内容>"
+                    link = self.__image__(element, tmpdir)
+                    s += f"\n<图片链接>\n {link} \n</图片链接>"
+                    s += "\n<end_figure>"
+                    re.append(s)
+                elif element.category == "Table":
+                    re.append(self.__table__(element))
+                elif element.category == "Formula":
+                    re.append(self.__formula__(element))
+                else:
+                    re.append(element.text)
         return re
 
 
 if __name__ == '__main__':
-    re = FastParser()("../data/pdf/LargePdf.pdf", strategy="hi_res")
-    with open('../output/LargePdf.txt', 'w') as w:
+    re = FastParser()("../data/pptx/LargePpt.pptx", strategy="hi_res")
+    with open('../output/pdf6.txt', 'w') as w:
         w.write("\n".join(re))

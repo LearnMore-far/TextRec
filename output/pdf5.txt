@@ -1,0 +1,126 @@
+叶蕾等：基于知识图谱的多跳可解释问答
+5
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+V_{F}^{T}=s u m_{c a l}(W D^{T}\otimes W V M)
+<end_formula>
+的信息，实现了信息聚合效果，并且具有可解释性。
+由式(11)可知若存在某个非答案实体U在某一跳的预
+测分数远大于其他实体，那么即使之后有答案实体取得了较
+高的分数，模型也会因为U在某次跳跃中分数过高而做出错
+误的选择（具体细节将在式(15)中介绍)。这将导致模型很
+难离开局部最优值，因此需要使用截断函数模块对最终分数
+进行修剪。
+本文首先设计了一个获取阅值的算法：
+(6)
+其中VERd，符号?表示将WDT中的每个元素与WVM中对
+应行的全部元素相乘，函数sumcor（x）的作用是将矩阵x每列
+元素相加以降低向量的维度。此操作为句子中的每个元素分
+配百分比的权重的同时降低了上层计算的复杂度。基于V，
+本文计算每个关系的分数
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+S_{R}^{T}=S i g m\omega i d\Bigl(M L P(V_{F}^{T})\Bigr)
+<end_formula>
+(7)
+与每一跳的分数
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\zeta_{H}^{T}=S_{0}f_{\mathit{l}}^{T}e^{-i t\hbar d\chi}\biggl(M L^{p}\biggl(V_{F}^{T}\biggr)\biggr)
+<end_formula>
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+\bar{a}\equiv\frac{M M R}{\left|S_{S}\right|}\times\sum_{i=0}^{\left|S_{g}\right|}\prod_{i=0}\frac{}{m a\chi\left(S_{S_{i}\downarrow}\right)}
+<end_formula>
+(12)
+(8)
+3.6推理模块
+本文从预训练模块获得的三元组索引矩阵TM中提取每
+个三元组头实体、关系与尾实体的索引向量，分别记为Sub、
+Rel和obj，具体公式如下：
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+S u b,R e l,O b j=T M(0),T M(1),T M(2)
+<end_formula>
+其中α表示阔值，MMR是最大-平均比率（Max一
+Mean Rate)，用于适应不同的使用场景，Ssz表示T时刻一
+个批次中分数向量的个数。本文希望模型不被某些极值误导，
+同时充分利用每一组数据，因此考虑在模型中使用动态最值
+的方法，以避免出现模型不收敛的情况。基于此需求本文提
+出了max_mean算法，其核心思想是提取一个批次中每个分
+数向量的最大值，将它们相加后取平均值。之后本文通过
+getO函数获取数值超过a的元素位置矩阵
+(9)
+其中函数TM（x）表示提取TM矩阵的第x列数据。本文利用式
+（7)与当前时刻实体分数集合S提取每个实体与关系的分数。
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+S u b S,R e l S=S_{E}^{T}(S u b),S_{R}^{T}(R e l)
+<end_formula>
+(10)
+其中SubS，RelS分别表示头实体与关系的分数集合。S（x）函
+数表示从T时刻的分数集合ST（包括S、S和ST）中提取以
+向量x中每个值作为索引的分数。T时刻的尾实体分数集合
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+O b j S=\left(\sum(S u b S\times R e l S)_{s a m e}\ \ o b j\right)_{t n h i\ \ t_{m a d e n}}
+<end_formula>
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+M X=g e t(S_{E}^{T},\alpha)
+<end_formula>
+(13)
+其中get（M，x)表示创建一个与矩阵M形状相同的新矩阵MX，
+若M中存在值大于x的元素，则在MX中将相应位置填入1，
+其余元素填入0。接下来本文使用一种可导的方式来获得截
+断后的分数
+(11)
+本文将同个实体获得的分数累加，并以向量0bj中的元
+素为索引将结果放入集合0bjS中，流程示例如图3所示。假
+设图3知识图谱中一共存在五个实体，第一次跳跃结束时实
+体e的分数通过三元组（e2.r2，e)内部的乘法运算得到，实
+体e的分数通过三元组（e3，r3，e2）与三元组（es,rs，e2）分别进
+行乘法运算后将结果相加得到，同理可计算剩余实体的分数。
+若没有三元组指向某个实体（如eg），本文将其分数设置为
+0。本文计算所有三元组的尾实体分数，并将结果按实体索
+引更新S。本文将分数最大的实体作为答案。需要注意的是
+分数最高的实体有多个时，本文将所有分数最高的实体都作
+为答案。基于式（11)，MIQA模型实现了聚合头实体与关系
+的信息。在多次跳跃后一个实体将包含多个其他实体传递来
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+S(e）xS(r）=S（e)
+S(e)xS(r) → S(e)
+S(e)
+S(e) x S(r) → S(e)
+S(e) × S(r) → S(e)
+S(e)
+S(e)xS(r)→S(e)
+S(e) × S(rg) → S(es)
+S(e
+S(e)× S(r) →S(es)
+S(e) ×S(r) →S(e)
+S(e)
+S(e) xS(x) - S(e)
+S(eg)×S(ra)→S(e)
+S(e)
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/2476a001dbf6aaea10d0ed655dce7823.jpg 
+</图片链接>
+<end_figure>
+图3基于分数的跌跃方法示意图
+Fig 3 Schematic diagram of score-based jumping method
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+S_{E}^{T+1}=\frac{S_{E}^{T}}{M\times S_{E}^{T}}+(1-M X)
+<end_formula>
+(14)
+其中S+表示S经过更新后的结果。经过计算后，S+中大
+于α的数都变为α，小于a的数不变。截断函数模块在完成截
+取工作的情况下增加了梯度的概念，使损失函数收敛更快，
+提高了模型的性能。之后S+参与选代直到到达最大跳数
+Max_Hop。由此可知模型在计算过程中难免会进行不必要
+的跳跃，因此本文使用每跳分数
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+S_{l a s t}=\sum_{i=0}^{M a x_{j}H o p}S_{H}^{i}\otimes S_{B}^{i}
+<end_formula>
+(15)
+来修正偏差，其中Stast表示所有实体最终的分数。本文将同
+个实体在每个时刻的分数与每一跳分数加权后相加，把最终
+结果作为实体的最终分数。本文采用L2范数作为损失函数
+以下是一个公式，包含对应的格式，以<end_formula>结尾: 
+L o s s=\frac{|E|\times\sqrt{\mathcal{N}}\times\sum(S_{\mathrm{i}a s t}-\mathcal{A}\mathrm{in}S w\mathcal{\tau})^{2}}{\sum(|E|\times\mathcal{W})}
+<end_formula>
+(16)

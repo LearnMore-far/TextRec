@@ -1,6 +1,11 @@
+import os
+
+import cv2
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from tqdm import tqdm
+from tempfile import TemporaryDirectory
+from paddleocr import img_decode
 
 
 class PptxParser:
@@ -8,7 +13,14 @@ class PptxParser:
     def __init__(self, ocr):
         self.ocr = ocr
 
-    def __extract(self, shape):
+    def __save_image__(self, block, save_folder):
+        img_path = os.path.join(
+            save_folder, "{}.jpg".format(block.sha1)
+        )
+        cv2.imwrite(img_path, img_decode(block.blob))
+        return img_path
+
+    def __extract(self, shape, save_folder):
         if shape.shape_type == 19:
             table = shape.table
             rows = ["<table><thead>"]
@@ -27,7 +39,11 @@ class PptxParser:
                 row_text.append("</tr>")
                 rows.append("".join(row_text))
             rows.append("</tbody></table>")
-            return "".join(rows)
+            s = "以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: \n"
+            table = "".join(rows)
+            s += table
+            s += "\n<end_table>"
+            return s
 
         if shape.has_text_frame:
             return shape.text_frame.text
@@ -35,7 +51,7 @@ class PptxParser:
         if shape.shape_type == 6:
             texts = []
             for p in sorted(shape.shapes, key=lambda x: (x.top // 10, x.left)):
-                t = self.__extract(p)
+                t = self.__extract(p, save_folder)
                 if t:
                     texts.append(t)
             return "\n".join(texts)
@@ -48,13 +64,14 @@ class PptxParser:
     def __call__(self, pptx_path):
         prs = Presentation(pptx_path)
         re = []
-        for idx, slide in enumerate(tqdm(prs.slides, desc=f"process {pptx_path}")):
-            texts = []
-            for shape in tqdm(sorted(slide.shapes, key=lambda x: (x.top // 10, x.left)), desc=f"page {idx}"):
-                txt = self.__extract(shape)
-                if txt:
-                    texts.append(txt)
-            re.append("\n".join(texts))
+        with TemporaryDirectory() as tmpdir:
+            for idx, slide in enumerate(tqdm(prs.slides, desc=f"process {pptx_path}")):
+                texts = []
+                for shape in tqdm(sorted(slide.shapes, key=lambda x: (x.top // 10, x.left)), desc=f"page {idx}"):
+                    txt = self.__extract(shape, tmpdir)
+                    if txt:
+                        texts.append(txt)
+                re.append("\n".join(texts))
         return re
 
 

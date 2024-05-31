@@ -1,0 +1,1391 @@
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重爱理之大學
+CHONGQING UNIVERSITYOFTECHNOLOGY
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/7ad6200bde975d0fa161650a9173042a.jpg 
+</图片链接>
+<end_figure>
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/fa85db43129b8b778a9e14b38e94e604.jpg 
+</图片链接>
+<end_figure>
+基于多模块抽取框架的实体关系抽取方法研究
+Research on entity relationship extraction based on multi module extraction framework
+汇  报  人：严秋阳
+指导老师：卢    玲
+汇报时间：2022年12月17日
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+Contact Us
+重庆市巴南区红光大道69号，400050
+No.69 Hongguang Avenue, Banan District, Chongqing, China, 400050
+P.  139 8379 1161 / ll@cqut.edu.cn
+1
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/462f6f5877b9556b90cdd0c4577a935f.jpg 
+</图片链接>
+<end_figure>
+01 选题背景及意义
+02 国内外研究现状
+03 研究目标及内容
+04 研究路线及关键问题
+05 研究进度安排
+06 初步研究汇报
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+2
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+ONE
+选题背景及意义
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+3
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+01  选题背景及意义
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+实体关系抽取：抽取文本中的实体并识别实体之间的关系，
+得到实体关系三元组
+Tsinghua University
+China
+Located in
+Capital
+Hosted
+Beijing
+Olympic Games.
+Tsinghua University is located in Beijing.
+Beijing  is  the capital of China.
+Beijing hosted the Olympic Games for the first time in 2008.
+以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: 
+<table><thead><tr><td>ID</td><td>文本</td><td>实体1</td><td>实体2</td><td>关系</td></tr></thead><tbody><tr><td>0</td><td>Tsinghua University is located in Beijing.</td><td>Tsinghua University </td><td>Beijing</td><td>located in </td></tr><tr><td>1</td><td>Beijing  is the capital of China.</td><td>Beijing </td><td> China</td><td>capital</td></tr><tr><td>2</td><td>Beijing hosted the Olympic Games for the first time in 2008.</td><td>Beijing</td><td>Olympic Games </td><td>hosted </td></tr><tr><td>......</td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<end_table>
+N
+E
+R
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+4
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+01  选题背景及意义
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+语义理解
+知识图谱
+01
+02
+帮助获取文本结构信息
+构成知识图谱中节点和边的基本属性
+03
+04
+问答系统
+机器翻译
+构成知识网络，理解用户的意图
+理解文本的真实含义
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+5
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+TWO
+国内外研究现状
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+6
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+02  国内外研究现状
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+基于核函数的方法，基于特征向量的方法和基于句法解析增强的方法
+实体关系抽取任务首次提出 
+前期机器学习方法是主流 
+01
+02
+1998 年，MUC会议首次提出实体关系抽取任务，之后的ACE会议定义了17种关系
+01
+03
+04
+02
+基于核函数的方法，基于特征向量的方法和基于句法解析增强的方法
+
+A
+B
+流水线抽取方式出现
+03
+联合抽取模型出现
+04
+R
+C
+将CNN、RNN、LSTM等应用于该领域，先抽取实体，再分类关系。该类方法模型简单易实现，容易造成实体冗余、误差累积、交互缺失
+
+共享实体抽取和关系抽取两个任务，生成实体关系三元组，该类方法模型较难搭建
+
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+7
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+02  国内外研究现状
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+近几年主要的模块框架
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+EntityExtractionModule
+RelationDetectionModule
+Conditional Random Field
+(CRF)
+Encoding
+STM
+STN
+STM
+LSTN
+Layer
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/ea9ad399339367405f97742cf44179cd.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+eo
+Beijing
+Beilj
+D
+of
+Beijing
+ho
+D
+e
+ita
+e
+is
+h
+IBeijing is
+Head
+Project
+the
+h2
+e2
+(Beijing, Capital of, China)
+is
+Linking
+Linking
+BERT
+rk=Capital of
+rk=Contains
+Capital
+h3
+：
+(China, Contains, Beijing)
+Tail
+es
+Project
+of
+h4
+of China
+Beijing
+capital
+China
+the
+e6
+China
+SampledEntity
+Head Tail
+Bipartite
+Relational
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/bc5707b3fa985c928c4d86ba33c075d5.jpg 
+</图片链接>
+<end_figure>
+                           单模块抽取框架
+优点：架构简单，采用一步分类，网络训练简单直观
+缺点：容易造成冗余的三元组过多以及三元组的抽取错误，抽取精度不准
+                       多模块抽取框架
+优点：逐步获取实体和关系，主体、客体和关系之间相互依存，相互关联，模型很有前景
+缺点：前期的错误可能会影响后期预测结果，存在级联误差问题
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+8
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+02  国内外研究现状
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+总结
+总 结：
+现有实体关系抽取框架主要分为多模块抽取和单模块抽取形式，而多模块抽取框架是现在研究的主流并取得了良好的研究进展，但仍然有待突破。
+01
+中文实体关系抽取为其它应用提供外部知识
+01
+02
+中文实体关系抽取融入外部知识形式单一
+Pipeline方法存在误差传播问题，忽略了实体和关系分类这两个任务的相关性
+02
+03
+中文实体关系抽取相较英文实体关系抽取开始时间晚
+基于联合的方法对于一个句子中存在同一关系的共享实体(实体重叠)问题处理效果不理想，其次是实体信息和文本信息利用不充分，形式单一。
+03
+04
+中文本身语言特点导致中文实体关系抽取研究困难
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+9
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+THREE
+研究目标及内容
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+10
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+03  研究目标
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+
+本课题主要研究目标有二：
+01
+提出一种基于多模块抽取框架的实体关系抽取模型，并验证其在单文档实体关系抽取任务的有效性
+02
+提出一种基于多模块抽取框架的实体关系抽取框架，并在其单文档标准数据集上验证其有效性，同时研究将其应用到多文档抽取路径
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+11
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+03  研究内容
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+
+研究基于多模块框架的
+实体关系抽取方法
+研究实体关系抽取领域的应用
+研究实体关系抽取中抽取实体方式的优化
+基于联合解码的方式：
+基于指针网络的方式
+基于跨度(span)的方式基于序列标注的方式等
+基于参数共享的形式
+模型选择：
+LSTM or Transformer等
+模型设计目标：
+主要是提升实体关系抽取效果解决实体重叠问题
+研究多模块抽取框架和多文档抽取的应用路径，与多文档实体抽取方法相结合
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+12
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+FOUR
+研究路线及关键问题
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+13
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+04  研究路线
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+y
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+文献资料搜集整理
+确定研究目标、研究内容
+前期工作
+实验平台及理论技术、可行性分析
+中期工作
+数据准备
+数据集的选择
+字、词向量输入编码
+对抽取实体方式的优化研究
+指针网络
+序列标注
+跨度方式
+参数共享
+优化抽取方法研究
+注意力机制、直接相加、拼接等
+基于多模块抽取框架的实体关系抽取模型的构建及实验
+基于深度神经网络编码器
+基于深度神经网络解码器
+注意力机制
+网络
+损失函数
+算法优化
+实体抽取
+初始化
+优化
+模型训练、测试
+→
+方法评价
+后期工作
+实验结果和分析
+总结并进行下一步工作
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/da41416fa4aa4014951c8479b458d90f.jpg 
+</图片链接>
+<end_figure>
+研究进度：
+前期工作已经完成
+目前在实验探究论证阶段
+
+技术路线：
+数据集：NYT、WebNLG等数据集
+预处理：处理成模型需要的结构形式
+向量化：对输入的句子进行编码得到字向量、词向量，并对向量进行模型训练
+训练模型：搭建端到端的模型框架
+模型优化
+模型评价
+04  研究路线
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+14
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+04  关键问题
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+01
+基于多模块的关系抽取框架的模块数选择问题
+抽取实体任务板块是抽取实体对的形式还是抽取出主体和客体形式还有待实验研究
+
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Triples
+RelationDetectionModule
+Blank Filling Module
+Entity
+Relations
+Pairs
+FFN
+FFN
+0
+MaskVector
+Encoder
+Multi-Head Attention
+Multi-HeadAttention
+XL
+Multi-Head Attention
+Multi-Head Attention
+Q
+V
+Q
+xcls
+RelationTemplateGeneration
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/e20800f58c460689b6791525b75df336.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Capital
+Relation-Specific
+ObjectTaggers
+Relations
+Work
+Birth_place
+Start
+Object
+End
+Subject
+Start
+SubjectTagger
+End
+BERTEncoder
+Capital
+as
+he
+nitec
+ki
+shington
+erica
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/ee4068a612aa0a3b09710a0d53e12a93.jpg 
+</图片链接>
+<end_figure>
+直接抽取出实体对的形式
+先抽取出主体，再进行客体的抽取
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+15
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+04  关键问题
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+02
+如何有效的解决实体关系抽取中的实体重叠等问题
+实体重叠等问题严重影响到实体关系抽取的性能，模型中采用何种方法解决实体重叠等问题
+实体重叠概念：可能是一个实体同另一个实体之间存在着多种关系(EPO)，还有可能是一个实体与其他不同实体之间存在着多种关系(SEO)。
+以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: 
+<table><thead><tr><td>关关系关系</td><td></td><td></td><td></td><td></td></tr></thead><tbody><tr><td>Normal</td><td></td><td></td><td></td><td></td></tr><tr><td>
+EPO
+
+</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<end_table>
+关系重叠类型
+文本
+实体关系
+位于
+北京位于中国。
+北京                       中国
+主演
+周星驰既是这部电影《功夫》的导演又是主演。
+《功夫》
+周星驰
+导演
+中国台湾地区
+周杰伦，1979年1月18日出生与中国台湾地区是中国知名歌手。
+出生地
+SEO
+周杰伦
+国籍
+中国
+出生日期
+1979年1月18日
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+16
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+FIVE
+研究进度安排
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+17
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+05  研究进度安排
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+Step 04
+Step 02
+撰写论文
+实验验证
+2023.12-2024.06
+2022.12-2023.04
+ 分析数据集数据特点，进行词向量训练等预处理，并对数据集做好划分（训练集、验证集、测试集）。
+完成模型测试、评价，以及论文撰写，准备毕业答辩。
+Start
+Step 01
+Step 03
+课题研究
+检查调整
+Finish
+2022.09-2022.11
+2023.05-2023.11
+搜集实体关系抽取数据资料，阅读国内外研究相关文献，了解实体关系抽取以及神经网络模型。
+根据实验遇到的问题，调整实验方法，改进模型结构，提升实验效果。
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+18
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+目录 CONTENT
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+PART
+SIX
+初步研究汇报
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+19
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+06  初步研究汇报
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+(Jack eats apple)
+(Jack eatspear)
+Triples
+(Tom eats apple)
+(Tom eats pear)
+P
+sub,obj
+Entitycorrespondence
+Tail-entity Extractor
+apple
+pear
+H+V,+Vhead
+Jack
+eats
+Head-entity Extractor
+apple
+Rpot
+Rpot
+PotentialRelationPrediction
+Tom
+0
+eats
+FFN
+pear
+Multi-HeadAttention
+Pre-training
+BERT
+S
+Jackeatsapple,Tomeatspear.
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/f74c43889901c401f78a9649e7e77e2d.jpg 
+</图片链接>
+<end_figure>
+核心思路：
+融合注意力机制、半指针网络
+先识别关系再识别实体
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+20
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+06  初步研究汇报
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+实验数据集汇总表
+以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: 
+<table><thead><tr><td></td><td>训练集</td><td>验证集</td><td>测试集</td><td>关系数量</td></tr></thead><tbody><tr><td>NYT*</td><td>56195</td><td>4999</td><td>5000</td><td>24</td></tr><tr><td>WebNLG*</td><td>5019</td><td>500</td><td>703</td><td>171</td></tr><tr><td>NYT</td><td>56196</td><td>5000</td><td>5000</td><td>24</td></tr><tr><td>WebNLG</td><td>5019</td><td>703</td><td>703</td><td>216</td></tr></tbody></table>
+<end_table>
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+21
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重庭理工大学
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6782946aabfb440d633752a8b50fbdfc.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重度理工大
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/033e2d4104d93f3675fe8b43535a667c.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+重爱理之大學
+CHONGQING UNIVERSITYOFTECHNOLOGY
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/7ad6200bde975d0fa161650a9173042a.jpg 
+</图片链接>
+<end_figure>
+计算机科学与工程学院
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Computer Science and Engineering
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/b8bd93c39c805af844cc4b67a0b6557d.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+Natural Language Processing and Information Retrieval Lab
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/6a892aa24f70fa2f2f8eeec1f83eb150.jpg 
+</图片链接>
+<end_figure>
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/312553c4fb54741d0e9e0eafe5e8f5ad.jpg 
+</图片链接>
+<end_figure>
+感谢您的聆听！
+请提出宝贵意见
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/1a32b929fa5a47e0eaf5ae4dbcade3d4.jpg 
+</图片链接>
+<end_figure>
+汇  报  人：严秋阳	
+指导老师：卢    玲
+汇报时间：2022年12月17日
+以下是一张图片，包含对应的<图片文本内容>以及<图片链接>，以<end_figure>结尾: 
+<图片文本内容>
+A
+</图片文本内容>
+<图片链接>
+ https://test-mp-cx.oss-cn-shenzhen.aliyuncs.com/knowledge/15829cab6365e84ca1405bf8a916b69b.jpg 
+</图片链接>
+<end_figure>
+Contact Us
+重庆市巴南区红光大道69号，400050
+No.69 Hongguang Avenue, Banan District, Chongqing, China, 400050
+P.  139 8379 1161 / ll@cqut.edu.cn
+22

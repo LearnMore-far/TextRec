@@ -1,5 +1,5 @@
+import argparse
 import os
-import shutil
 from pathlib import Path
 from subprocess import run
 from ppstructure.utility import draw_structure_result
@@ -49,13 +49,10 @@ def sorted_layout_boxes(res, w):
     return new_res
 
 
-def file_to_pdf(doc_path, basedir, file_type=0):
+def file_to_pdf(doc_path, output_folder, file_type=0):
     """
     Converts a Word document to a PDF file using LibreOffice.
     """
-    output_folder = os.path.join(basedir, "output/tmp")
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
     if file_type == 0:
         pdf_path = doc_path.replace(".docx", ".pdf")
     elif file_type == 1:
@@ -94,5 +91,15 @@ def draw(result, image):
     im_show.save('/Users/zhoutao/code/TextRec/output/tmp/result.jpg')
 
 
+def init_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source_dir", type=str, default="data/docx/word3.docx")
+    parser.add_argument("--output_dir", type=str, default=None)
+    parser.add_argument("--doc2pdf", type=bool, choices=[True, False], default=False)
+    parser.add_argument("--ppt2pdf", type=bool, choices=[True, False], default=False)
+    parser.add_argument("--fast", type=str, choices=["fast", "hi_res"], default=None)
+    return parser
+
+
 if __name__ == '__main__':
-    file_to_pdf("../data/docx/word3.docx", "../")
+    print(file_to_pdf("../data/docx/word3.docx"))

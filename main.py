@@ -4,10 +4,10 @@ from parser.docx_parser import DocxParser
 from parser.excel_parser import ExcelParser
 from parser.pic_parser import PicParser
 from parser.fast_parser import FastParser
-from parser.urlibs import file_to_pdf, traverse_directory, clear
+from parser.urlibs import file_to_pdf, traverse_directory, init_args
 import os
 from tqdm import tqdm
-import argparse
+from tempfile import TemporaryDirectory
 
 
 def write_helper(data, path):
@@ -32,7 +32,40 @@ class Parser:
         # 利用unstructured库处理
         self.fast = FastParser()
 
+    def __pdf__(self, args, file_name):
+        if args.fast:
+            re = self.fast(file_name, strategy=args.fast)
+        else:
+            re = self.pdf(file_name)
+        return re
+
+    def __docx__(self, args, file_name, tmpdir):
+        if args.doc2pdf:
+            file_name = file_to_pdf(file_name, tmpdir)
+        if args.fast:
+            re = self.fast(file_name, strategy=args.fast)
+        elif args.doc2pdf:
+            re = self.pdf(file_name)
+        else:
+            re = self.doc(file_name)
+        return re
+
+    def __pptx__(self, args, file_name, tmpdir):
+        if args.ppt2pdf:
+            file_name = file_to_pdf(file_name, tmpdir, file_type=1)
+        if args.fast:
+            re = self.fast(file_name, strategy=args.fast)
+        elif args.ppt2pdf:
+            re = self.pdf(file_name)
+        else:
+            re = self.ppt(file_name)
+        return re
+
     def __call__(self, args):
+        """
+        :param args: 指定参数
+        :return: list, 其中每一项为一个文件解析
+        """
         paths = []
         file_name = args.source_dir.replace('\\', '/')
         if os.path.isfile(file_name):
@@ -41,48 +74,37 @@ class Parser:
             paths = traverse_directory(os.path.abspath(file_name))
         else:
             raise Exception('Illegal FileName!')
-        for name in tqdm(paths):
-            try:
-                basename = os.path.basename(name).split('.')[0] + '.txt'
-                if name.endswith('pdf'):
-                    if args.fast:
-                        re = self.fast(name)
+        result = []
+        with TemporaryDirectory() as tmpdir:
+            for name in tqdm(paths):
+                try:
+                    basename = os.path.basename(name).split('.')[0] + '.txt'
+                    if name.endswith('pdf'):
+                        re = self.__pdf__(args, name)
+                    elif name.endswith('docx'):
+                        re = self.__docx__(args, name, tmpdir)
+                    elif name.endswith("pptx"):
+                        re = self.__pptx__(args, name, tmpdir)
+                    elif name.endswith("xlsx"):
+                        re = self.excel.html(name)
                     else:
-                        re = self.pdf(name)
-                elif name.endswith('docx'):
-                    if args.fast:
-                        re = self.fast(name)
-                    elif args.doc2pdf:
-                        name = file_to_pdf(name, self.basedir)
-                        re = self.pdf(name)
+                        re = self.pic(name)
+                    if args.output_dir:
+                        write_helper("\n".join(re), os.path.join(args.output_dir, basename))
                     else:
-                        re = self.doc(name)
-                elif name.endswith("pptx"):
-                    if args.fast:
-                        re = self.fast(name)
-                    elif args.ppt2pdf:
-                        name = file_to_pdf(name, self.basedir, file_type=1)
-                        re = self.pdf(name)
-                    else:
-                        re = self.ppt(name)
-                elif name.endswith("xlsx"):
-                    re = self.excel.html(name)
-                else:
-                    re = self.pic(name)
-                write_helper("\n".join(re), os.path.join(args.output_dir, basename))
-            except:
-                clear(self.pdf.save_folder)
-                print(f"{name} is error!")
+                        result.append("\n".join(re))
+                except Exception as e:
+                    print("异常产生：", e)
+        return result, paths
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--source_dir", type=str, default="./data/pdf/")
-    parser.add_argument("--output_dir", type=str, default="./output/")
-    parser.add_argument("--doc2pdf", type=bool, default=True)
-    parser.add_argument("--ppt2pdf", type=bool, default=False)
-    parser.add_argument("--fast", type=bool, default=True)
+    parser = init_args()
     args = parser.parse_args()
     par = Parser()
     print(args)
-    par(args)
+    re = par(args)
+    if not args.output_dir:
+        for file, name in zip(re[0], re[1]):
+            print(name)
+            print(file)

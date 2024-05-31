@@ -1,3 +1,5 @@
+import os
+
 import docx
 from docx.document import Document
 from docx.text.paragraph import Paragraph
@@ -5,6 +7,9 @@ from docx.parts.image import ImagePart
 from docx.table import _Cell, Table
 from docx.oxml.table import CT_Tbl
 from docx.oxml.text.paragraph import CT_P
+from paddle.dataset.image import cv2
+from paddleocr import img_decode
+from tempfile import TemporaryDirectory
 
 
 class DocxParser:
@@ -47,14 +52,21 @@ class DocxParser:
             row_text.append("</tr>")
             rows.append("".join(row_text))
         rows.append("</tbody></table>")
-        return "".join(rows)
-        # return "\n".join(["|".join([cell.text for cell in row.cells]) for row in table.rows])
+        s = "以下是一张表格，包含对应的格式以及数据，以<end_table>结尾: \n"
+        table = "".join(rows)
+        s += table
+        s += "\n<end_table>"
+        return s
 
     def __is_formula(self, paragraph):
         return bool(paragraph._element.xpath('.//m:oMath'))
 
     def __extract_formula_text(self, omml_element):
-        return "".join([node.text for node in omml_element.iter() if node.text])
+        s = "以下是一个公式，包含对应的格式，以<end_formula>结尾: \n"
+        formula = "".join([node.text for node in omml_element.iter() if node.text])
+        s += formula
+        s += "\n<end_formula>"
+        return
 
     def __extract_formula(self, paragraph):
         omml_elements = paragraph._element.xpath('.//m:oMath')
@@ -89,22 +101,30 @@ class DocxParser:
             else:
                 continue
 
+    def __save_image__(self, block, save_folder):
+        img_path = os.path.join(
+            save_folder, "{}.jpg".format(block.sha1)
+        )
+        cv2.imwrite(img_path, img_decode(block.blob))
+        return img_path
+
     def __call__(self, word_path):
         doc = docx.Document(word_path)
         re = []
-        for block in self.__iter_block_items(doc):
-            if isinstance(block, Paragraph):
-                re.append(block.text)
-            elif isinstance(block, Table):
-                re.append(self.__read_table(block))
-            elif isinstance(block, ImagePart):
-                res = self.ocr(block.blob)
-                if len(res):
-                    re.append("\n".join(res))
-            elif isinstance(block, str):
-                re.append(block)
-            else:
-                continue
+        with TemporaryDirectory() as tmpdir:
+            for block in self.__iter_block_items(doc):
+                if isinstance(block, Paragraph):
+                    re.append(block.text)
+                elif isinstance(block, Table):
+                    re.append(self.__read_table(block))
+                elif isinstance(block, ImagePart):
+                    res = self.ocr(block.blob)
+                    if len(res):
+                        re.append("\n".join(res))
+                elif isinstance(block, str):
+                    re.append(block)
+                else:
+                    continue
         return re
 
 
