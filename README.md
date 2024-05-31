@@ -7,6 +7,11 @@ mac环境 python3.8
 ```
 conda env create -f environment.yml -n your_env
 命令行安装libreoffice
+注意：目前paddleOCR使用的是cpu版本，非常非常非常慢！
+要使用gpu版本需要安装gpu版本paddleOCR
+pip install paddlepaddle-gpu -i https://mirror.baidu.com/pypi/simple
+然后设置use_gpu=True，paser文件夹的pdf_parser中
+self.pdf_ocr = PPStructure(lang="ch", use_gpu=True)
 ```
 ## 2.使用指南
 
